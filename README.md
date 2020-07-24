@@ -4,19 +4,35 @@ Dewey will be an application that allows users to set up their own personal libr
 
 ## Checkout flow:
 
-user clicks checkout affordance on item 
-checkout object is posted to db
-checkedOut is set to true in checkouts table
-available is set to false in items table
-UserId in checkouts table is the user to whom the object is assigned (checked out to. i.e. the borrower)
-the owner is the userId in the items table
+A user clicks checkout affordance on item. 
 
-the item will be displayed in the borrowing user’s main view under “item’s you’re currently borrowing”
-the item will be displayed in the owning user’s main view under “item’s you’re currently lending”
 
-when the user clicks “return item” “checkedOut” in the checkouts table will be marked as false and available will be marked as true in the items table.
+A checkout object is posted to the database.
+
+
+```checkedOut``` is set to ```true``` in checkouts table.
+
+
+```available``` is set to ```false``` in items table.
+
+
+```userId``` in checkouts table is the user to whom the object is assigned (checked out to. i.e. the borrower)
+
+
+The owner is the ```userId``` in the items table.
+
+The item will be displayed in the borrowing user’s main view under “item’s you’re currently borrowing”
+
+
+The item will be displayed in the owning user’s main view under “item’s you’re currently lending”
+
+
+When the user clicks “return item”, ```checkedOut``` in the checkouts table will be marked as ```false``` and ```available``` will be marked as true in the items table.
+
 
 the item will no longer be displayed in the borrowing user’s main view under “item’s you’re currently borrowing”
+
+
 the item will no longer be displayed in the owning user’s main view under “item’s you’re currently lending”
 
 
