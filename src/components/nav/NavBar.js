@@ -30,6 +30,11 @@ const NavBar = () => {
             Your Library
             </Link>
           </li>
+          <li>
+            <Link className="nav-link" to="/Checkouts">
+            Borrowing
+            </Link>
+          </li>
         </ul>
       </nav>
     </header>

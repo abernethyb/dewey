@@ -7,23 +7,27 @@ let intActiveUserID = parseInt(activeUserId)
 console.log(activeUserId)
 
 const CheckoutList = (props) => {
-    const [checkouts, setCheckouts] = useState([]);
-
-    const getCheckouts = () => {
-        return ApiManager.getTwoExpanded("checkouts", "user", "item").then(checkoutsFromAPI => {
-            setCheckouts(checkoutsFromAPI)
+    const [items, setItems] = useState([]);
+    //const [checkouts, setCheckouts] = useState([]);
+    //console.log(checkouts)
+    console.log(items)
+    const getItems = () => {
+        return ApiManager.getEmbeddedWithExpand("items", "checkouts", "user").then(itemsFromAPI => {
+            
+            setItems(itemsFromAPI)
+            //setCheckouts(itemsFromAPI.checkouts)
         });
     };
     
     useEffect(() => {
-        getCheckouts();    
+        getItems();    
     }, []);
 
   
     return (
         <>
-            <div className="checkout--list">
-                {checkouts.map(checkout => checkout.userId === intActiveUserID && <CheckoutCard key={checkout.id} checkout={checkout} {...props} />)}
+            <div className="item--list">
+                {items.map(item => !item.available && <CheckoutCard key={item.id} item={item} dueDate={item.checkouts.map(checkout => checkout.dueDate)} {...props} />)}
             </div>
         </>
     );

@@ -21,8 +21,8 @@ export default {
     getExpandedByUserId(table, id, expand) {
         return fetch(`${remoteURL}/${table}/?userId=${id}&_expand=${expand}`).then(result => result.json())
     },
-    getEmbeddedByUserId(table, id, embed) {
-        return fetch(`${remoteURL}/${table}/?userId=${id}&_embed=${embed}`).then(result => result.json())
+    getEmbeddedWithExpand(table, embed, expand) {
+        return fetch(`${remoteURL}/${table}/?_embed=${embed}&_expand=${expand}`).then(result => result.json())
     },
     addObject(table, newObject) {
         return fetch(`${remoteURL}/${table}`, {
