@@ -3,11 +3,14 @@ import ItemCard from './ItemCard';
 import ApiManager from '../../modules/ApiManager';
 
 let activeUserId = sessionStorage.getItem("credentials")
-const ItemList = (props) => {
+let intActiveUserID = parseInt(activeUserId)
+console.log(activeUserId)
+
+const PublicLibrary = (props) => {
     const [items, setItems] = useState([]);
 
     const getItems = () => {
-        return ApiManager.getByUserId("items", activeUserId, "user").then(itemsFromAPI => {
+        return ApiManager.getAll("items", "user").then(itemsFromAPI => {
             setItems(itemsFromAPI)
         });
     };
@@ -20,9 +23,9 @@ const ItemList = (props) => {
     return (
         <>
             <div className="item--list">
-                {items.map(item =><ItemCard key={item.id} item={item} {...props} />)}
+                {items.map(item => intActiveUserID !== item.user.id && <ItemCard key={item.id} item={item} {...props} />)}
             </div>
         </>
     );
 };
-export default ItemList
+export default PublicLibrary
