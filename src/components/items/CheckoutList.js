@@ -4,8 +4,6 @@ import ApiManager from '../../modules/ApiManager';
 
 let activeUserId = sessionStorage.getItem("credentials")
 let intActiveUserID = parseInt(activeUserId)
-console.log(activeUserId)
-//name: "", owner: "", checkoutDate: "", dueDate: ""}
 const CheckoutList = (props) => {
     const [checkouts, setCheckouts] = useState([]);
     //console.log(checkouts)
@@ -25,11 +23,21 @@ const CheckoutList = (props) => {
         getItems();    
     }, []);
 
+    const checkin = (checkin, available) => {
+        ApiManager.editObject("checkouts", checkin).then( () => {
+            ApiManager.editObject("items", available).then( () => {
+                getItems()
+            })
+            
+        }
+        )
+    }
+
   
     return (
         <>
             <div className="item--list">
-                {checkouts.map(checkout => checkout.userId === intActiveUserID && checkout.checkedOut && <CheckoutCard key={checkout.id} checkout={checkout} {...props} />)}
+                {checkouts.map(checkout => checkout.userId === intActiveUserID && checkout.checkedOut && <CheckoutCard key={checkout.id} checkout={checkout} checkin={checkin} {...props} />)}
             </div>
         </>
     );

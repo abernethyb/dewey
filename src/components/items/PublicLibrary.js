@@ -4,7 +4,6 @@ import ApiManager from '../../modules/ApiManager';
 
 let activeUserId = sessionStorage.getItem("credentials")
 let intActiveUserID = parseInt(activeUserId)
-console.log(activeUserId)
 
 const PublicLibrary = (props) => {
     const [items, setItems] = useState([]);
@@ -14,16 +13,27 @@ const PublicLibrary = (props) => {
             setItems(itemsFromAPI)
         });
     };
+
     
     useEffect(() => {
         getItems();    
     }, []);
 
+    const postCheckout = (checkout, unavailable) => {
+        ApiManager.addObject("checkouts", checkout).then( () => {
+            ApiManager.editObject("items", unavailable).then( () => {
+                getItems()
+            })
+            
+        }
+        )
+    }
+
   
     return (
         <>
             <div className="item--list">
-                {items.map(item => intActiveUserID !== item.user.id && <ItemCard key={item.id} item={item} {...props} />)}
+                {items.map(item => intActiveUserID !== item.user.id && <ItemCard key={item.id} item={item} postCheckout={postCheckout} intActiveUserID={intActiveUserID} {...props} />)}
             </div>
         </>
     );
