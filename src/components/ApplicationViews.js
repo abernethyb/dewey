@@ -1,6 +1,8 @@
 import { Route } from "react-router-dom";
 import React from "react";
-import ItemList from "./items/ItemList";
+import PublicLibrary from "./items/PublicLibrary";
+import PersonalLibrary from "./items/PersonalLibrary";
+import CheckoutList from "./items/CheckoutList";
 import Login from "./auth/Login"
 
 const ApplicationViews = (props) => {
@@ -14,9 +16,22 @@ const ApplicationViews = (props) => {
                 return <Login setUser={setUser} {...props} />
             }} />
             <Route
-                path="/items"
+                exact
+                path="/PublicLibrary"
                 render={props => {
-                    return <ItemList {...props} />;
+                    return <PublicLibrary {...props} />;
+                }}
+            />
+            <Route
+                path="/PersonalLibrary"
+                render={props => {
+                    return <PersonalLibrary {...props} />;
+                }}
+            />
+            <Route
+                path="/Checkouts"
+                render={props => {
+                    return <CheckoutList {...props} />;
                 }}
             />
         </>

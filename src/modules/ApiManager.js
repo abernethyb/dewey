@@ -1,8 +1,12 @@
 const remoteURL = "http://localhost:5002"
 
 export default {
-    getEmbedded(table, id, embed) {
+    getSingleEmbedded(table, id, embed) {
         return fetch(`${remoteURL}/${table}/${id}?_embed=${embed}`)
+            .then(result => result.json())
+    },
+    getAllEmbedded(table, embed) {
+        return fetch(`${remoteURL}/${table}/?_embed=${embed}`)
             .then(result => result.json())
     },
     getExpanded(table, id, expand) {
@@ -11,8 +15,17 @@ export default {
     getAll(table, expand) {
         return fetch(`${remoteURL}/${table}/?_expand=${expand}`).then(result => result.json())
     },
-    getByUserId(table, id, expand) {
+    getOne(table, id) {
+        return fetch(`${remoteURL}/${table}/${id}`).then(result => result.json())
+    },
+    getTwoExpanded(table, expand, expandTwo) {
+        return fetch(`${remoteURL}/${table}/?_expand=${expand}&_expand=${expandTwo}`).then(result => result.json())
+    },
+    getExpandedByUserId(table, id, expand) {
         return fetch(`${remoteURL}/${table}/?userId=${id}&_expand=${expand}`).then(result => result.json())
+    },
+    getEmbeddedWithExpand(table, embed, expand) {
+        return fetch(`${remoteURL}/${table}/?_embed=${embed}&_expand=${expand}`).then(result => result.json())
     },
     addObject(table, newObject) {
         return fetch(`${remoteURL}/${table}`, {

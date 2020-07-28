@@ -21,8 +21,18 @@ const NavBar = () => {
             </Link>
           </li>
           <li>
-            <Link className="nav-link" to="/items">
-              Items
+            <Link className="nav-link" to="/PublicLibrary">
+            Public Library
+            </Link>
+          </li>
+          <li>
+            <Link className="nav-link" to="/PersonalLibrary">
+            Your Library
+            </Link>
+          </li>
+          <li>
+            <Link className="nav-link" to="/Checkouts">
+            Borrowing
             </Link>
           </li>
         </ul>
