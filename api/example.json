@@ -1,0 +1,196 @@
+{
+    "users": [
+      {
+        "username": "Bob Doe",
+        "email": "bob@email.com",
+        "password": "probablymyPetsName",
+        "city": "Nashville",
+        "region": "Tennessee",
+        "id": 1
+      },
+      {
+        "username": "Jane Robertson",
+        "email": "jane@email.com",
+        "password": "$uper$3cr#tPassword",
+        "city": "Nashville",
+        "region": "Tennessee",
+        "id": 2
+      },
+      {
+        "username": "Socrates",
+        "email": "Grace@email.com",
+        "password": "password",
+        "city": "Athens",
+        "region": "Greece",
+        "id": 3
+      },
+      {
+        "username": "Aristotle",
+        "email": "brendan@email.com",
+        "password": "password",
+        "city": "Athens",
+        "region": "Greece",
+        "id": 4
+      },
+      {
+        "username": "Plato",
+        "email": "nate@email.com",
+        "password": "password",
+        "city": "Athens",
+        "region": "Georgia",
+        "id": 5
+      }
+    ],
+    "items": [
+      {
+        "userId": 1,
+        "name": "Goundwork for the Metaphysics of Morals",
+        "author": "Immanuel Kant",
+        "available": false,
+        "serial": "",
+        "isbn": "",
+        "makeOrPublisher": "Oxford University Press",
+        "model": "",
+        "year": 2009,
+        "otherInfo": "",
+        "categoryId": 1,
+        "id": 1
+      },
+      {
+        "userId": 4,
+        "name": "Critique of Pure reason",
+        "author": "Immanuel Kant",
+        "available": true,
+        "serial": "",
+        "isbn": "9780521657297",
+        "makeOrPublisher": "Cambridge University Press",
+        "model": "",
+        "year": 2009,
+        "otherInfo": "",
+        "categoryId": 1,
+        "id": 2
+      },
+      {
+        "userId": 4,
+        "name": "Critique of Practical Reason",
+        "author": "Immanuel Kant",
+        "available": true,
+        "serial": "",
+        "isbn": "9780521654081",
+        "makeOrPublisher": "Cambridge University Press",
+        "model": "",
+        "year": 1999,
+        "otherInfo": "",
+        "categoryId": 1,
+        "id": 3
+      },
+      {
+        "userId": 4,
+        "name": "Critique of Judgement",
+        "author": "Immanuel Kant",
+        "available": false,
+        "serial": "",
+        "isbn": "0199552460",
+        "makeOrPublisher": "Oxford University Press",
+        "model": "",
+        "year": 2009,
+        "otherInfo": "",
+        "categoryId": 1,
+        "id": 4
+      },
+      {
+        "userId": 3,
+        "name": "Ulysses",
+        "author": "James Joyce",
+        "available": true,
+        "serial": "",
+        "isbn": "",
+        "makeOrPublisher": "",
+        "model": "",
+        "year": null,
+        "otherInfo": "",
+        "categoryId": 1,
+        "id": 5
+      },
+      {
+        "userId": 5,
+        "name": "Chain Saw",
+        "author": "",
+        "available": false,
+        "serial": "123456789",
+        "isbn": "",
+        "makeOrPublisher": "stihl",
+        "model": "16 inch",
+        "year": null,
+        "otherInfo": "",
+        "categoryId": 2,
+        "id": 6
+      }
+    ],
+    "categories": [
+      {
+        "name": "book",
+        "id": 1
+      },
+      {
+        "name": "tools",
+        "id": 2
+      }
+    ],
+    "checkouts": [
+      {
+        "userId": 5,
+        "itemId": 4,
+        "checkoutDate": 1592179200,
+        "dueDate": 1594929662,
+        "checkinDate": null,
+        "checkedOut": true,
+        "id": 1
+      },
+      {
+        "userId": 4,
+        "itemId": 1,
+        "checkoutDate": 1592179200,
+        "dueDate": 1595953029,
+        "checkinDate": null,
+        "checkedOut": true,
+        "id": 2
+      },
+      {
+        "userId": 4,
+        "itemId": 1,
+        "checkoutDate": 1592179200,
+        "dueDate": 1594929662,
+        "checkinDate": null,
+        "checkedOut": false,
+        "id": 3
+      },
+      {
+        "userId": 4,
+        "itemId": 5,
+        "checkoutDate": 1595965152,
+        "dueDate": 1598384352,
+        "checkinDate": 1595965156,
+        "checkedOut": false,
+        "id": 4
+      },
+      {
+        "userId": 4,
+        "itemId": 5,
+        "checkoutDate": 1595965169,
+        "dueDate": 1598384369,
+        "checkinDate": 1595965277,
+        "checkedOut": false,
+        "id": 5
+      },
+      {
+        "userId": 4,
+        "itemId": 6,
+        "checkoutDate": 1595966596,
+        "dueDate": 1598385796,
+        "checkinDate": null,
+        "checkedOut": true,
+        "id": 6
+      }
+    ]
+  }
