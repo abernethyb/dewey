@@ -19,9 +19,12 @@ const PublicLibrary = (props) => {
         getItems();    
     }, []);
 
-    const postCheckout = (newObject) => {
-        ApiManager.addObject("checkouts", newObject).then( () => {
-            getItems()
+    const postCheckout = (checkout, unavailable) => {
+        ApiManager.addObject("checkouts", checkout).then( () => {
+            ApiManager.editObject("items", unavailable).then( () => {
+                getItems()
+            })
+            
         }
         )
     }

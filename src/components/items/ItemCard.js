@@ -30,6 +30,21 @@ const ItemCard = (props) => {
 
     };
 
+    const unavailableItem = {
+        userId: props.item.userId,
+        name: props.item.name,
+        author: props.item.author,
+        available: false,
+        serial: props.item.serial,
+        isbn: props.item.isbn,
+        makeOrPublisher: props.item.makeOrPublisher,
+        model: props.item.model,
+        year: props.item.year,
+        otherInfo: props.item.otherInfo,
+        categoryId: props.item.categoryId,
+        id: props.item.id
+    }
+
 
     return (
 
@@ -42,7 +57,7 @@ const ItemCard = (props) => {
                 <button
                     type="button"
                     className="card--button"
-                    onClick={() => props.postCheckout(checkout)}>
+                    onClick={() => props.postCheckout(checkout, unavailableItem)}>
                         Checkout
                 </button>
 
