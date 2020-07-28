@@ -15,6 +15,9 @@ export default {
     getAll(table, expand) {
         return fetch(`${remoteURL}/${table}/?_expand=${expand}`).then(result => result.json())
     },
+    getOne(table, id) {
+        return fetch(`${remoteURL}/${table}/${id}`).then(result => result.json())
+    },
     getTwoExpanded(table, expand, expandTwo) {
         return fetch(`${remoteURL}/${table}/?_expand=${expand}&_expand=${expandTwo}`).then(result => result.json())
     },

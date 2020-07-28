@@ -5,17 +5,19 @@ import ApiManager from '../../modules/ApiManager';
 let activeUserId = sessionStorage.getItem("credentials")
 let intActiveUserID = parseInt(activeUserId)
 console.log(activeUserId)
-
+//name: "", owner: "", checkoutDate: "", dueDate: ""}
 const CheckoutList = (props) => {
-    const [items, setItems] = useState([]);
-    //const [checkouts, setCheckouts] = useState([]);
+    const [checkouts, setCheckouts] = useState([]);
     //console.log(checkouts)
-    console.log(items)
+    // console.log(items)
     const getItems = () => {
-        return ApiManager.getEmbeddedWithExpand("items", "checkouts", "user").then(itemsFromAPI => {
-            
-            setItems(itemsFromAPI)
-            //setCheckouts(itemsFromAPI.checkouts)
+        return ApiManager.getTwoExpanded("checkouts", "item", "user").then(itemsFromAPI => {
+            setCheckouts(itemsFromAPI)
+            // .then( () => {
+            //     ApiManager.getOne("users", 4).then(response => {
+            //         setOwner(response)
+            //     })
+            // })
         });
     };
     
@@ -27,7 +29,7 @@ const CheckoutList = (props) => {
     return (
         <>
             <div className="item--list">
-                {items.map(item => !item.available && <CheckoutCard key={item.id} item={item} dueDate={item.checkouts.map(checkout => checkout.dueDate)} {...props} />)}
+                {checkouts.map(checkout => <CheckoutCard key={checkout.id} checkout={checkout} {...props} />)}
             </div>
         </>
     );
