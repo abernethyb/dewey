@@ -65,7 +65,13 @@ const CheckoutCard = (props) => {
                 <p>status: {props.checkout.checkedOut ? 'checked out' : 'returned'}</p>
                 <p>Checkout Date: {checkoutDate}</p>
                 <p>Due Date: {dueDate}</p>
-                <p></p>
+                <button
+                    type="button"
+                    className="card--button"
+                    // disabled={!props.item.available}
+                    onClick={() => props.checkin(checkin, availableItem)}>
+                        Return
+                </button>
 
 
             </div>

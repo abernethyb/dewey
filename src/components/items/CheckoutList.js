@@ -23,11 +23,21 @@ const CheckoutList = (props) => {
         getItems();    
     }, []);
 
+    const checkin = (checkin, available) => {
+        ApiManager.editObject("checkouts", checkin).then( () => {
+            ApiManager.editObject("items", available).then( () => {
+                getItems()
+            })
+            
+        }
+        )
+    }
+
   
     return (
         <>
             <div className="item--list">
-                {checkouts.map(checkout => checkout.userId === intActiveUserID && checkout.checkedOut && <CheckoutCard key={checkout.id} checkout={checkout} {...props} />)}
+                {checkouts.map(checkout => checkout.userId === intActiveUserID && checkout.checkedOut && <CheckoutCard key={checkout.id} checkout={checkout} checkin={checkin} {...props} />)}
             </div>
         </>
     );
