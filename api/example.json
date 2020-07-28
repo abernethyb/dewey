@@ -1,16 +1,16 @@
 {
     "users": [
       {
-        "username": "Bob Doe",
-        "email": "bob@email.com",
-        "password": "probablymyPetsName",
+        "username": "Hannah Arendt",
+        "email": "H@email.com",
+        "password": "$uper$3cr#tPassword",
         "city": "Nashville",
         "region": "Tennessee",
         "id": 1
       },
       {
-        "username": "Jane Robertson",
-        "email": "jane@email.com",
+        "username": "Margrate Cavendish",
+        "email": "M@email.com",
         "password": "$uper$3cr#tPassword",
         "city": "Nashville",
         "region": "Tennessee",
