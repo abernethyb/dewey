@@ -20,7 +20,7 @@ const ItemCard = (props) => {
     //console.log(dueDate)
 
     const checkout = {
-        userId: props.item.user.id,
+        userId: props.intActiveUserID,
         itemId: props.item.id,
         checkoutDate: secDate,
         dueDate: dueDate,
@@ -42,7 +42,7 @@ const ItemCard = (props) => {
                 <button
                     type="button"
                     className="card--button"
-                    onClick={() => props.createCheckout(checkout)}>
+                    onClick={() => props.postCheckout(checkout)}>
                         Checkout
                 </button>
 

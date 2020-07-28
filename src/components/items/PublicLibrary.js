@@ -13,16 +13,24 @@ const PublicLibrary = (props) => {
             setItems(itemsFromAPI)
         });
     };
+
     
     useEffect(() => {
         getItems();    
     }, []);
 
+    const postCheckout = (newObject) => {
+        ApiManager.addObject("checkouts", newObject).then( () => {
+            getItems()
+        }
+        )
+    }
+
   
     return (
         <>
             <div className="item--list">
-                {items.map(item => intActiveUserID !== item.user.id && <ItemCard key={item.id} item={item} {...props} />)}
+                {items.map(item => intActiveUserID !== item.user.id && <ItemCard key={item.id} item={item} postCheckout={postCheckout} intActiveUserID={intActiveUserID} {...props} />)}
             </div>
         </>
     );
