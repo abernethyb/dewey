@@ -33,7 +33,7 @@ const PublicLibrary = (props) => {
     return (
         <>
             <div className="item--list">
-                {items.map(item => intActiveUserID !== item.user.id && item.available && <ItemCard key={item.id} item={item} postCheckout={postCheckout} intActiveUserID={intActiveUserID} {...props} />)}
+                {items.map(item => intActiveUserID !== item.user.id && <ItemCard key={item.id} item={item} postCheckout={postCheckout} intActiveUserID={intActiveUserID} {...props} />)}
             </div>
         </>
     );
