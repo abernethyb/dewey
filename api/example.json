@@ -18,15 +18,15 @@
       },
       {
         "username": "Socrates",
-        "email": "Grace@email.com",
-        "password": "password",
+        "email": "Socrates@email.com",
+        "password": "knowThyPassword",
         "city": "Athens",
         "region": "Greece",
         "id": 3
       },
       {
         "username": "Aristotle",
-        "email": "brendan@email.com",
+        "email": "aristotle@email.com",
         "password": "password",
         "city": "Athens",
         "region": "Greece",
@@ -34,8 +34,8 @@
       },
       {
         "username": "Plato",
-        "email": "nate@email.com",
-        "password": "password",
+        "email": "Plato@email.com",
+        "password": "merelyARepresentationOfAnIdealPassword",
         "city": "Athens",
         "region": "Georgia",
         "id": 5
