@@ -13,7 +13,7 @@ const CheckoutCard = (props) => {
         })
     }
     useEffect(() => {
-        getOwner();    
+        getOwner();
     }, []);
 
     return (
@@ -23,6 +23,7 @@ const CheckoutCard = (props) => {
                 <h2 className="item--name">{props.checkout.item.name}</h2>
                 <p>By: {props.checkout.item.author}</p>
                 <p>Owner: {owner.username}</p>
+                <p>status: {props.checkout.checkedOut ? 'checked out' : 'returned'}</p>
                 {/* {console.log("checkouts", props.checkouts.id)} */}
                 {/* <p>{props.dueDate}</p> */}
 
