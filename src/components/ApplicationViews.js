@@ -30,7 +30,7 @@ const ApplicationViews = (props) => {
                 }}
             />
             <Route
-                path="/newItem"
+                path="/NewItem"
                 render={props => {
                     return <NewItem {...props} />;
                 }}

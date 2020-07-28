@@ -13,16 +13,21 @@ const PersonalLibrary = (props) => {
             setItems(itemsFromAPI)
         });
     };
-    
+
     useEffect(() => {
-        getItems();    
+        getItems();
     }, []);
 
-  
+
     return (
         <>
             <div className="item--list">
-                {items.map(item =><PersonalItemCard key={item.id} item={item} {...props} />)}
+                <button type="button"
+                    className="section--button"
+                    onClick={() => { props.history.push("/NewItem") }}>
+                    New Item
+                </button>
+                {items.map(item => <PersonalItemCard key={item.id} item={item} {...props} />)}
             </div>
         </>
     );
