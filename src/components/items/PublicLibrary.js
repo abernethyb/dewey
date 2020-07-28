@@ -4,7 +4,6 @@ import ApiManager from '../../modules/ApiManager';
 
 let activeUserId = sessionStorage.getItem("credentials")
 let intActiveUserID = parseInt(activeUserId)
-console.log(activeUserId)
 
 const PublicLibrary = (props) => {
     const [items, setItems] = useState([]);

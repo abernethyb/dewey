@@ -4,8 +4,6 @@ import ApiManager from '../../modules/ApiManager';
 
 let activeUserId = sessionStorage.getItem("credentials")
 let intActiveUserID = parseInt(activeUserId)
-console.log(activeUserId)
-//name: "", owner: "", checkoutDate: "", dueDate: ""}
 const CheckoutList = (props) => {
     const [checkouts, setCheckouts] = useState([]);
     //console.log(checkouts)
