@@ -2,6 +2,7 @@ import { Route } from "react-router-dom";
 import React from "react";
 import PublicLibrary from "./items/PublicLibrary";
 import PersonalLibrary from "./items/PersonalLibrary";
+import NewItem from "./items/newItem";
 import CheckoutList from "./items/CheckoutList";
 import Login from "./auth/Login"
 
@@ -26,6 +27,12 @@ const ApplicationViews = (props) => {
                 path="/PersonalLibrary"
                 render={props => {
                     return <PersonalLibrary {...props} />;
+                }}
+            />
+            <Route
+                path="/newItem"
+                render={props => {
+                    return <NewItem {...props} />;
                 }}
             />
             <Route

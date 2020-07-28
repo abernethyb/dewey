@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import ItemCard from './ItemCard';
+import PersonalItemCard from './PersonalItemCard';
 import ApiManager from '../../modules/ApiManager';
 
 let activeUserId = sessionStorage.getItem("credentials")
@@ -22,7 +22,7 @@ const PersonalLibrary = (props) => {
     return (
         <>
             <div className="item--list">
-                {items.map(item =><ItemCard key={item.id} item={item} {...props} />)}
+                {items.map(item =><PersonalItemCard key={item.id} item={item} {...props} />)}
             </div>
         </>
     );
