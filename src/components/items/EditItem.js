@@ -6,9 +6,8 @@ import ApiManager from '../../modules/ApiManager';
 let activeUserId = sessionStorage.getItem("credentials")
 let intActiveUserID = parseInt(activeUserId)
 
-const NewItem = props => {
-    const [item, setItem] = useState({ userId: intActiveUserID, name: "", author: "", available: true, serial: "", isbn: "", makeOrPublisher: "", model: "", year: null, otherInfo: "", categoryId: "" });
-    const [categories, setCategories] = useState([]);
+const EditedItem = props => {
+    const [item, setItem] = useState({ userId: intActiveUserID, name: "", author: "", available: true, serial: "", isbn: "", makeOrPublisher: "", model: "", year: null, otherInfo: "", categoryId: null });
     const [isLoading, setIsLoading] = useState(false);
 
     const handleFieldChange = event => {
@@ -18,27 +17,42 @@ const NewItem = props => {
     };
 
 
-    const constructNewItem = event => {
+    const constructEditedItem = event => {
         event.preventDefault();
-        if (item.name === "") {
-            window.alert("Please input an item name");
-        } else {
-            setIsLoading(true);
-            item.categoryId = parseInt(item.categoryId)
-            ApiManager.addObject("items", item)
-                .then(() => props.history.push("/PersonalLibrary"));
+
+
+        setIsLoading(true);
+        item.categoryId = parseInt(item.categoryId)
+        const ItemEdit = {
+            userId: item.userId,
+            name: item.name,
+            author: item.author,
+            available: item.available,
+            serial: item.serial,
+            isbn: item.isbn,
+            makeOrPublisher: item.makeOrPublisher,
+            model: item.model,
+            year: item.year,
+            otherInfo: item.otherInfo,
+            categoryId: item.categoryId,
+            id: props.match.params.itemId
         }
+
+
+        ApiManager.editObject("items", item)
+            .then(() => props.history.push("/PersonalLibrary"));
+
     };
+
     useEffect(() => {
+        ApiManager.getOne("animals", props.match.params.itemId)
+            .then(response => {
+                setItem(response);
+                setIsLoading(false);
 
-        ApiManager.getAll("categories",).then(response => {
-            setCategories(response);
-            setIsLoading(false);
-        })
 
-
+            });
     }, []);
-
 
     return (
         <>
@@ -109,31 +123,14 @@ const NewItem = props => {
                             placeholder="Other"
                         />
                         <label htmlFor="otherInfo">other information</label>
-                        {/* <select
+                        <select
                             type="dropdown"
                             id="categoryId"
                             onChange={handleFieldChange}>
                             <option value="" hidden defaultValue >Category</option>
                             <option value="1" >Book</option>
                             <option value="2" >Tool</option>
-                        </select> */}
-
-                        <select
-                            className="form-control"
-                            id="categoryId"
-                            onChange={handleFieldChange}
-                        >
-                            <option value="" hidden defaultValue >Category</option>
-                            {categories.map(category =>
-                                <option key={category.id} value={category.id}>
-                                    {category.name}
-                                </option>
-                            )}
                         </select>
-
-
-
-
                         <label htmlFor="categoryId">category</label>
                     </div>
                     <div classtitle="alignRight">
@@ -141,7 +138,7 @@ const NewItem = props => {
                             type="button"
                             className="section--button"
                             disabled={isLoading}
-                            onClick={constructNewItem}
+                            onClick={constructEditedItem}
                         >Submit</button>
                     </div>
                 </fieldset>
@@ -150,4 +147,4 @@ const NewItem = props => {
     );
 };
 
-export default NewItem
+export default EditedItem
