@@ -7,7 +7,8 @@ let activeUserId = sessionStorage.getItem("credentials")
 let intActiveUserID = parseInt(activeUserId)
 
 const EditedItem = props => {
-    const [item, setItem] = useState({ userId: intActiveUserID, name: "", author: "", available: true, serial: "", isbn: "", makeOrPublisher: "", model: "", year: null, otherInfo: "", categoryId: null });
+    const [item, setItem] = useState({ userId: intActiveUserID, name: "", author: "", available: true, serial: "", isbn: "", makeOrPublisher: "", model: "", year: null, otherInfo: "", categoryId: "" });
+    const [categories, setCategories] = useState([]);
     const [isLoading, setIsLoading] = useState(false);
 
     const handleFieldChange = event => {
@@ -22,7 +23,6 @@ const EditedItem = props => {
 
 
         setIsLoading(true);
-        item.categoryId = parseInt(item.categoryId)
         const ItemEdit = {
             userId: item.userId,
             name: item.name,
@@ -34,21 +34,27 @@ const EditedItem = props => {
             model: item.model,
             year: item.year,
             otherInfo: item.otherInfo,
-            categoryId: item.categoryId,
+            categoryId: parseInt(item.categoryId),
             id: props.match.params.itemId
         }
 
 
-        ApiManager.editObject("items", item)
+        ApiManager.editObject("items", ItemEdit)
             .then(() => props.history.push("/PersonalLibrary"));
 
     };
 
     useEffect(() => {
-        ApiManager.getOne("animals", props.match.params.itemId)
-            .then(response => {
-                setItem(response);
-                setIsLoading(false);
+        ApiManager.getOne("items", props.match.params.itemId)
+            .then(itemResponse => {
+
+                ApiManager.getAll("categories",).then(catResponse => {
+                    setCategories(catResponse);
+                    setIsLoading(false);
+                    setItem(itemResponse);
+                    setIsLoading(false);
+                })
+
 
 
             });
@@ -64,6 +70,7 @@ const EditedItem = props => {
                             required
                             onChange={handleFieldChange}
                             id="name"
+                            value={item.name}
                             placeholder="Item Name"
                         />
                         <label htmlFor="title">name</label>
@@ -72,6 +79,7 @@ const EditedItem = props => {
                             required
                             onChange={handleFieldChange}
                             id="author"
+                            value={item.author}
                             placeholder="Author"
                         />
                         <label htmlFor="title">author</label>
@@ -80,6 +88,7 @@ const EditedItem = props => {
                             required
                             onChange={handleFieldChange}
                             id="serial"
+                            value={item.serial}
                             placeholder="Item serial number"
                         />
                         <label htmlFor="title">serial Number</label>
@@ -88,6 +97,7 @@ const EditedItem = props => {
                             required
                             onChange={handleFieldChange}
                             id="isbn"
+                            value={item.isbn}
                             placeholder="ISBN number"
                         />
                         <label htmlFor="isbn">ISBN number</label>
@@ -96,6 +106,7 @@ const EditedItem = props => {
                             required
                             onChange={handleFieldChange}
                             id="makeOrPublisher"
+                            value={item.makeOrPublisher}
                             placeholder="Manufacturer/Publisher"
                         />
                         <label htmlFor="makeOrPublisher">Manufacturer/Publisher</label>
@@ -104,6 +115,7 @@ const EditedItem = props => {
                             required
                             onChange={handleFieldChange}
                             id="model"
+                            value={item.model}
                             placeholder="Item model"
                         />
                         <label htmlFor="model">Model</label>
@@ -112,6 +124,7 @@ const EditedItem = props => {
                             required
                             onChange={handleFieldChange}
                             id="year"
+                            value={item.year}
                             placeholder="Year"
                         />
                         <label htmlFor="year">Year manufactured/Printed</label>
@@ -120,16 +133,22 @@ const EditedItem = props => {
                             required
                             onChange={handleFieldChange}
                             id="otherInfo"
+                            value={item.otherInfo}
                             placeholder="Other"
                         />
                         <label htmlFor="otherInfo">other information</label>
                         <select
-                            type="dropdown"
+                            className="form-control"
                             id="categoryId"
-                            onChange={handleFieldChange}>
+                            value={item.categoryId}
+                            onChange={handleFieldChange}
+                        >
                             <option value="" hidden defaultValue >Category</option>
-                            <option value="1" >Book</option>
-                            <option value="2" >Tool</option>
+                            {categories.map(category =>
+                                <option key={category.id} value={category.id}>
+                                    {category.name}
+                                </option>
+                            )}
                         </select>
                         <label htmlFor="categoryId">category</label>
                     </div>

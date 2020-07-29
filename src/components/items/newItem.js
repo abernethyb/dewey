@@ -109,14 +109,6 @@ const NewItem = props => {
                             placeholder="Other"
                         />
                         <label htmlFor="otherInfo">other information</label>
-                        {/* <select
-                            type="dropdown"
-                            id="categoryId"
-                            onChange={handleFieldChange}>
-                            <option value="" hidden defaultValue >Category</option>
-                            <option value="1" >Book</option>
-                            <option value="2" >Tool</option>
-                        </select> */}
 
                         <select
                             className="form-control"
@@ -130,9 +122,6 @@ const NewItem = props => {
                                 </option>
                             )}
                         </select>
-
-
-
 
                         <label htmlFor="categoryId">category</label>
                     </div>
