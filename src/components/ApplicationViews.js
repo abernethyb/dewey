@@ -25,6 +25,7 @@ const ApplicationViews = (props) => {
                 }}
             />
             <Route
+                exact
                 path="/PersonalLibrary"
                 render={props => {
                     return <PersonalLibrary {...props} />;
