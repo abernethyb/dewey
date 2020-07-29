@@ -7,6 +7,7 @@ import NewItem from "./items/newItem";
 import CheckoutList from "./items/CheckoutList";
 import Login from "./auth/Login"
 import Registration from "./auth/Registration"
+import Home from "./home/Home"
 
 const ApplicationViews = (props) => {
 
@@ -34,6 +35,18 @@ const ApplicationViews = (props) => {
             <Route path="/Registration" render={props => {
                 return <Registration setUser={setUser} {...props} />
             }} />
+            <Route
+                exact
+                path="/"
+                render={props => {
+                    if (hasUser) {
+                        return <Home {...props} />;
+                    } else {
+                        return <Redirect to="/login" />
+                    }
+
+                }}
+            />
             <Route
                 exact
                 path="/PublicLibrary"
