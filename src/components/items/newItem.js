@@ -7,7 +7,7 @@ let activeUserId = sessionStorage.getItem("credentials")
 let intActiveUserID = parseInt(activeUserId)
 
 const NewItem = props => {
-    const [item, setItem] = useState({ userId: intActiveUserID, name: "", author: "", available: true, serial: "", isbn: "", makeOrPublisher: "", model: "", year: null, otherInfo: "", categoryId: "" });
+    const [item, setItem] = useState({ userId: intActiveUserID, name: "", author: "", available: true, serial: "", isbn: "", makeOrPublisher: "", model: "", year: "", otherInfo: "", categoryId: "" });
     const [categories, setCategories] = useState([]);
     const [isLoading, setIsLoading] = useState(false);
 
@@ -25,6 +25,7 @@ const NewItem = props => {
         } else {
             setIsLoading(true);
             item.categoryId = parseInt(item.categoryId)
+            item.year = parseInt(item.year)
             ApiManager.addObject("items", item)
                 .then(() => props.history.push("/PersonalLibrary"));
         }
@@ -94,7 +95,7 @@ const NewItem = props => {
                         />
                         <label htmlFor="model">Model</label>
                         <input
-                            type="date"
+                            type="number"
                             required
                             onChange={handleFieldChange}
                             id="year"

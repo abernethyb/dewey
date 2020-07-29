@@ -32,7 +32,7 @@ const EditedItem = props => {
             isbn: item.isbn,
             makeOrPublisher: item.makeOrPublisher,
             model: item.model,
-            year: item.year,
+            year: parseInt(item.year),
             otherInfo: item.otherInfo,
             categoryId: parseInt(item.categoryId),
             id: props.match.params.itemId
@@ -120,7 +120,7 @@ const EditedItem = props => {
                         />
                         <label htmlFor="model">Model</label>
                         <input
-                            type="date"
+                            type="number"
                             required
                             onChange={handleFieldChange}
                             id="year"
