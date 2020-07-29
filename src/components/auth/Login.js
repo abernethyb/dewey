@@ -75,7 +75,7 @@ const Login = props => {
                     <label htmlFor="inputPassword">Password</label>
                 </div>
                 <button type="submit">Sign in</button>
-                <button type="button" onClick={() => props.history.push(`/registrationform`)}>New User</button>
+                <button type="button" onClick={() => props.history.push(`/Registration`)}>Register New User</button>
             </fieldset>
         </form>
     );
