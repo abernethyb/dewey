@@ -116,7 +116,7 @@ const NewItem = props => {
                         type="dropdown"
                             id="categoryId"
                             onChange={handleFieldChange}>
-                            <option value="" disabled selected hidden >Category</option>
+                            <option value="" hidden defaultValue >Category</option>
                             <option value="1" >Book</option>
                             <option value="2" >Tool</option>
                         </select>
