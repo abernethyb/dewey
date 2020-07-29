@@ -21,7 +21,7 @@ let intActiveUserID = parseInt(activeUserId)
 
 //categoryId is set to 1 until dropdown menue is created. this will need to be changed later
 const NewItem = props => {
-    const [item, setItem] = useState({ userId: intActiveUserID, name: "", author: "", available: true, serial: "", isbn: "", makeOrPublisher: "", model: "", year: null, otherInfo: "",  categoryId: 1 });
+    const [item, setItem] = useState({ userId: intActiveUserID, name: "", author: "", available: true, serial: "", isbn: "", makeOrPublisher: "", model: "", year: null, otherInfo: "",  categoryId: null });
     const [isLoading, setIsLoading] = useState(false);
 
     const handleFieldChange = event => {
@@ -37,6 +37,7 @@ const NewItem = props => {
             window.alert("Please input an item title and expectCompleteBy");
         } else {
             setIsLoading(true);
+            item.categoryId = parseInt(item.categoryId)
             ApiManager.addObject("items", item)
                 .then(() => props.history.push("/PersonalLibrary"));
         }
@@ -111,14 +112,15 @@ const NewItem = props => {
                             placeholder="Other"
                         />
                         <label htmlFor="otherInfo">other information</label>
-                        {/* <input
-                            type="dropdown"
-                            required
-                            onChange={handleFieldChange}
-                            id="otherInfo"
-                            placeholder="Other"
-                        />
-                        <label htmlFor="otherInfo">other information</label> */}
+                        <select
+                        type="dropdown"
+                            id="categoryId"
+                            onChange={handleFieldChange}>
+                            <option value="" disabled selected hidden >Category</option>
+                            <option value="1" >Book</option>
+                            <option value="2" >Tool</option>
+                        </select>
+                        <label htmlFor="categoryId">category</label>
                     </div>
                     <div classtitle="alignRight">
                         <button
