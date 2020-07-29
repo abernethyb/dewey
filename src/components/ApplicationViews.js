@@ -6,6 +6,7 @@ import EditedItem from "./items/EditItem";
 import NewItem from "./items/newItem";
 import CheckoutList from "./items/CheckoutList";
 import Login from "./auth/Login"
+import Registration from "./auth/Registration"
 
 const ApplicationViews = (props) => {
 
@@ -29,6 +30,9 @@ const ApplicationViews = (props) => {
         <>
             <Route path="/login" render={props => {
                 return <Login setUser={setUser} {...props} />
+            }} />
+            <Route path="/Registration" render={props => {
+                return <Registration setUser={setUser} {...props} />
             }} />
             <Route
                 exact

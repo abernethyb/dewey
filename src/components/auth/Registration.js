@@ -2,8 +2,15 @@
 import React, { useState } from "react"
 import ApiManager from "../../modules/ApiManager"
 
+// "username": "Bob Doe",
+// "email": "bob@email.com",
+// "password": "probablymyPetsName",
+// "city": "Nashville",
+// "region": "Tennessee",
+// "id": 1
+
 const Registration = props => {
-    const [newUser, setNewUser] = useState({ username: "", email: "", password: "" });
+    const [newUser, setNewUser] = useState({ username: "", email: "", password: "", city: "", region: "" });
     const [isLoading, setIsLoading] = useState(false);
     
     let passwordConf = ""
@@ -21,39 +28,47 @@ const Registration = props => {
     };
     const constructNewUser = evt => {
         evt.preventDefault();
-        if (newUser.username === "" || newUser.email === "" || newUser.password === "") {
+        if (newUser.username === "" || newUser.email === "" || newUser.password === "" || newUser.city === "" || newUser.region === "") {
             window.alert("Please fill out all fields");
         } else {
             setIsLoading(true);
             
-            let badWolf = false
+            let duplicateUser = false
             ApiManager.getAll("users").then((users) => {
 
                 users.map((user) => {
                     console.log("Registration db response", user.username, user.password)
                     console.log("Registration credentials", newUser.username, newUser.email)
-                    if (user.username === newUser.username || user.email === newUser.email) {
-                        console.log("oh no!")
-                        window.alert("Username or email is unavailable");
+                    if (user.username === newUser.username) {
+                        console.log("unavailable")
+                        window.alert("Sorry, that username is already in use.  Try another.");
                         console.log("newuser.username:", newUser.username, "user.username:", user.username)
-                        badWolf = true
-                        console.log("badWolf", badWolf)
-                        return badWolf
+                        duplicateUser = true
+                        console.log("duplicateUser", duplicateUser)
+                        return duplicateUser
+
+                    } else if (user.email === newUser.email) {
+                        console.log("unavailable")
+                        window.alert("Sorry, that email is already in use.  Already a user?  Try logging in.");
+                        console.log("newuser.username:", newUser.username, "user.username:", user.username)
+                        duplicateUser = true
+                        console.log("duplicateUser", duplicateUser)
+                        return duplicateUser
 
                     } else if (user.username !== newUser.username || user.email !== newUser.email) {
-                        console.log("yay, it's available!")
+                        console.log("user info is available!")
                     }
 
                 })
-                if (badWolf === false && newUser.password === passwordConf) {
+                if (duplicateUser === false && newUser.password === passwordConf) {
                     ApiManager.addObject("users", newUser)
-                        .then((returnedUser) => {
+                        .then((response) => {
                             console.log("added user")
-                            props.setUser(returnedUser)
+                            props.setUser(response)
                             props.history.push("/");
                         })
                 }else if (newUser.password !== passwordConf) {
-                    window.alert("hmmm... Something isn't right with your passwords.. Let's try entering them again");
+                    window.alert("Password and confirmation password did not match.  Please try again.");
                     console.log("this shouldn't post to db")
                 } else {
                     console.log("this shouldn't post to db")
@@ -69,7 +84,7 @@ const Registration = props => {
     return (
         <form onSubmit={handleFieldChange}>
             <fieldset>
-                <h2>New?</h2>
+                <h2>New to Dewey?</h2>
                 <h3>Sign up Below:</h3>
                 <div className="formgrid">
                     <input
@@ -79,11 +94,35 @@ const Registration = props => {
                         placeholder="username"
                         required />
                     <label htmlFor="username">Username</label>
-                    <input onChange={handleFieldChange} type="email"
+
+                    <input 
+                        onChange={handleFieldChange} 
+                        type="email"
                         id="email"
                         placeholder="email"
                         required="" autoFocus="" />
                     <label htmlFor="email">Email</label>
+                    <input 
+                        onChange={handleFieldChange} 
+                        type="text"
+                        id="city"
+                        placeholder="city"
+                        required="" autoFocus="" />
+                    <label htmlFor="city">City</label>
+                    <input 
+                        onChange={handleFieldChange} 
+                        type="text"
+                        id="city"
+                        placeholder="city"
+                        required="" autoFocus="" />
+                    <label htmlFor="city">City</label>
+                    <input 
+                        onChange={handleFieldChange} 
+                        type="text"
+                        id="region"
+                        placeholder="State/Region"
+                        required="" autoFocus="" />
+                    <label htmlFor="region">State/Region</label>
 
                     <input onChange={handleFieldChange} type="password"
                         id="password"
@@ -94,14 +133,14 @@ const Registration = props => {
                         id="passwordConf"
                         placeholder="Re-enter Password"
                         required="" />
-                    <label htmlFor="passwordConf">Let's type that password in one more time</label>
+                    <label htmlFor="passwordConf">Re-enter Password</label>
                 </div>
                 <button
                     type="submit"
                     disabled={isLoading}
                     onClick={constructNewUser}
 
-                >Register
+                >Sign up
                 </button>
             </fieldset>
         </form>
