@@ -14,6 +14,11 @@ const PersonalLibrary = (props) => {
         });
     };
 
+    const deleteItem = id => {
+        ApiManager.deleteObject("items", id)
+            .then(() => getItems());
+    };
+
     useEffect(() => {
         getItems();
     }, []);
@@ -27,7 +32,7 @@ const PersonalLibrary = (props) => {
                     onClick={() => { props.history.push("/NewItem") }}>
                     New Item
                 </button>
-                {items.map(item => <PersonalItemCard key={item.id} item={item} {...props} />)}
+                {items.map(item => <PersonalItemCard key={item.id} item={item} deleteItem={deleteItem} {...props} />)}
             </div>
         </>
     );
