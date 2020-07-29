@@ -1,8 +1,15 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import { withRouter } from 'react-router-dom';
 import "./NavBar.css";
 
-const NavBar = () => {
+const NavBar = props => {
+
+  const handleLogout = () => {
+    props.clearUser();
+    props.history.push('/');
+  }
+
   return (
     <header>
       <h1 className="site-title">
@@ -15,24 +22,26 @@ const NavBar = () => {
               Home
             </Link>
           </li>
-          <li>
-            <Link className="nav-link" to="/login">
-              Login
-            </Link>
-          </li>
+          {props.hasUser
+            ? <li>
+                <button className="nav-link" onClick={handleLogout}> Logout </button>
+              </li>
+            : <li>
+                <Link className="nav-link" to="/login">Login</Link>
+              </li>}
           <li>
             <Link className="nav-link" to="/PublicLibrary">
-            Public Library
+              Public Library
             </Link>
           </li>
           <li>
             <Link className="nav-link" to="/PersonalLibrary">
-            Your Library
+              Your Library
             </Link>
           </li>
           <li>
             <Link className="nav-link" to="/Checkouts">
-            Borrowing
+              Borrowing
             </Link>
           </li>
         </ul>
@@ -41,4 +50,4 @@ const NavBar = () => {
   );
 };
 
-export default NavBar;
+export default withRouter(NavBar);
