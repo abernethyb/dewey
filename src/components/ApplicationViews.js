@@ -5,6 +5,7 @@ import PersonalLibrary from "./items/PersonalLibrary";
 import EditedItem from "./items/EditItem";
 import NewItem from "./items/newItem";
 import CheckoutList from "./items/CheckoutList";
+import LendingList from "./items/LendingList";
 import Login from "./auth/Login"
 import Registration from "./auth/Registration"
 import Home from "./home/Home"
@@ -13,18 +14,6 @@ const ApplicationViews = (props) => {
 
     const hasUser = props.hasUser;
     const setUser = props.setUser;
-
-    //     <Route
-    //     exact
-    //     path="/tasks"
-    //     render={props => {
-    //         if (hasUser) {
-    //             return <TaskList {...props} />
-    //         } else {
-    //             return <Redirect to="/login" />
-    //         }
-    //     }}
-    // />
 
 
     return (
@@ -92,6 +81,16 @@ const ApplicationViews = (props) => {
                 render={props => {
                     if (hasUser) {
                     return <CheckoutList {...props} />;
+                } else {
+                    return <Redirect to="/login" />
+                }
+                }}
+            />
+            <Route
+                path="/Lending"
+                render={props => {
+                    if (hasUser) {
+                    return <LendingList {...props} />;
                 } else {
                     return <Redirect to="/login" />
                 }
