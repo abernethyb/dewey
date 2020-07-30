@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import ItemCard from './ItemCard';
 import ApiManager from '../../modules/ApiManager';
+import "./PublicLibrary.css"
 
 let activeUserId = sessionStorage.getItem("credentials")
 let intActiveUserID = parseInt(activeUserId)
