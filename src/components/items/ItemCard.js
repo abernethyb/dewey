@@ -75,7 +75,7 @@ const ItemCard = (props) => {
                     type="button"
                     className="card--button"
                     disabled={!props.item.available}
-                    onClick={() => props.postCheckout(checkout, unavailableItem)}>
+                    onClick={() => props.postCheckout(checkout, unavailableItem) }>
                     Checkout
                 </button>
 

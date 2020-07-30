@@ -23,7 +23,7 @@ const PublicLibrary = (props) => {
     const postCheckout = (checkout, unavailable) => {
         ApiManager.addObject("checkouts", checkout).then( () => {
             ApiManager.editObject("items", unavailable).then( () => {
-                getItems()
+                props.history.push("./Checkouts")
             })
             
         }
