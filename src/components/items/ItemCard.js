@@ -48,9 +48,12 @@ const ItemCard = (props) => {
     let description = null
     switch (props.item.categoryId) {
         case 1:
-            description = `By ${props.item.author}`;
+            description = props.item.otherInfo;
             break;
         case 2:
+            description = `By ${props.item.author}`;
+            break;
+        case 3:
             description = `${props.item.makeOrPublisher}, ${props.item.year}`;
             break;
         default:

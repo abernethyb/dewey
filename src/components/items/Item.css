@@ -21,6 +21,16 @@
     height: 25rem;
     text-align: center;
 }
+
+.edit--form {
+    background-color: rgb(209, 91, 44);
+    margin: .5rem 15rem;
+    padding: 2rem 1rem;
+    width: 15rem;
+    height: 25rem;
+    text-align: center;
+    
+}
 .new--item--button button {
     margin-top: 50%;
     height: 10%;
