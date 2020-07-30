@@ -25,6 +25,7 @@ const LendingList = (props) => {
     return (
         <>
             <div className="item--list">
+            <h1 className="library--title">Items You're Currently Lending</h1>
                 {checkouts.map(checkout => checkout.item.userId === intActiveUserID && checkout.checkedOut && <LendingCard key={checkout.id} checkout={checkout} {...props} />)}
             </div>
         </>

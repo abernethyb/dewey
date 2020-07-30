@@ -37,6 +37,7 @@ const CheckoutList = (props) => {
     return (
         <>
             <div className="item--list">
+            <h1 className="library--title">Items You're Currently Borrowing</h1>
                 {checkouts.map(checkout => checkout.userId === intActiveUserID && checkout.checkedOut && <CheckoutCard key={checkout.id} checkout={checkout} checkin={checkin} {...props} />)}
             </div>
         </>

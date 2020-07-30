@@ -28,6 +28,7 @@ const PersonalLibrary = (props) => {
     return (
         <>
             <div className="item--list">
+            <h1 className="library--title">Your Library</h1>
                 <div className="new--item">
                     {/* <button type="button"
                         className="section--button"
