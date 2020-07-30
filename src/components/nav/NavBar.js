@@ -41,7 +41,12 @@ const NavBar = props => {
           </li>
           <li>
             <Link className="nav-link" to="/Checkouts">
-              Borrowing
+              Currently Borrowing
+            </Link>
+          </li>
+          <li>
+            <Link className="nav-link" to="/Lending">
+              Currently Lending
             </Link>
           </li>
         </ul>
