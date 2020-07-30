@@ -67,6 +67,7 @@ const ItemCard = (props) => {
     return (
 
         <div className="card">
+            {props.item.available ?
             <div className="item--card">
                 <h2 className="item--name">{props.item.name}</h2>
                 <h3>{props.item.category.name}</h3>
@@ -82,6 +83,25 @@ const ItemCard = (props) => {
                 </button>
 
             </div>
+            :
+            <div className="item--card--unavailable">
+                <h2 className="item--name">{props.item.name}</h2>
+                <h3>{props.item.category.name}</h3>
+                <p>{description}</p>
+                <h3>{props.item.available ? `Available` : `UNAVAILABLE`}</h3>
+                <p>Due on: {humanDueDate}</p>
+                <p>Owned by {props.item.user.username} in  {props.item.user.city}, {props.item.user.region}</p>
+                <button
+                    type="button"
+                    className="card--button"
+                    disabled={!props.item.available}
+                    onClick={() => props.postCheckout(checkout, unavailableItem)}>
+                    Checkout
+                </button>
+
+            </div>
+
+            }
         </div>
     );
 };

@@ -5,6 +5,14 @@
     width: 15rem;
     height: 25rem;
 }
+.item--card--unavailable {
+    background-color: rgba(46, 196, 182, .5);
+    color: rgba(0, 0, 0, .5);
+    margin: .5rem;
+    padding: 1rem;
+    width: 15rem;
+    height: 25rem;
+}
 
 .personal--card {
     background-color: rgba(255, 191, 105, 1);
@@ -14,7 +22,8 @@
     height: 25rem;
 }
 .personal--card--unavailable {
-    background-color: rgb(255, 160, 105);
+    background-color: rgba(255, 191, 105, .5);
+    color: rgba(0, 0, 0, .5);
     margin: .5rem;
     padding: 1rem;
     width: 15rem;

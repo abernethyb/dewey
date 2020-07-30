@@ -45,7 +45,7 @@ const PersonalItemCard = (props) => {
             <div className="personal--card--unavailable">
             <h2 className="item--name">{props.item.name}</h2>
             <p>{description}</p>
-            <h3>{props.item.available ? 'Available' : 'Unavailable'}</h3>
+            <h3>{props.item.available ? 'Available' : 'UNAVAILABLE'}</h3>
             <button type="button"
                 disabled
                 onClick={() => props.history.push(`/PersonalLibrary/${props.item.id}/edit`)}>
