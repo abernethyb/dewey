@@ -63,6 +63,7 @@ const ItemCard = (props) => {
         <div className="card">
             <div className="item--card">
                 <h2 className="item--name">{props.item.name}</h2>
+                <h3>{props.item.category.name}</h3>
                 <p>{description}</p>
                 <p>{props.item.available ? 'available' : 'unavailable'}</p>
                 <p>Owned by {props.item.user.username} in  {props.item.user.city}, {props.item.user.region}</p>
