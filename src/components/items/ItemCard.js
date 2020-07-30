@@ -44,6 +44,16 @@ const ItemCard = (props) => {
         categoryId: props.item.categoryId,
         id: props.item.id
     }
+let description
+    switch(props.item.categoryId) {
+        case 1:
+            description = `By ${props.item.author}`;
+          break;
+        case 2:
+            description = `${props.item.makeOrPublisher}, ${props.item.year}`;
+          break;
+      }
+      
 
 
     return (
@@ -51,7 +61,7 @@ const ItemCard = (props) => {
         <div className="card">
             <div className="item--card">
                 <h2 className="item--name">{props.item.name}</h2>
-                <p>By: {props.item.author}</p>
+                <p>{description}</p>
                 <p>{props.item.available ? 'available' : 'unavailable'}</p>
                 <p>Owner: {props.item.user.username}</p>
                 <button
