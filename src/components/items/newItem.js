@@ -27,7 +27,9 @@ const NewItem = props => {
             item.categoryId = parseInt(item.categoryId)
             item.year != "" ? item.year = parseInt(item.year) : item.year = item.year
             ApiManager.addObject("items", item)
-                .then(() => props.history.push("/PersonalLibrary"));
+                .then(() => props.getItems().then(() => {
+                    setIsLoading(false)
+                }));
         }
     };
     useEffect(() => {

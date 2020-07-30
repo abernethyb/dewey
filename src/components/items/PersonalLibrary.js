@@ -34,7 +34,7 @@ const PersonalLibrary = (props) => {
                         onClick={() => { props.history.push("/NewItem") }}>
                         New Item
                     </button> */}
-                    <NewItem {...props} />
+                    <NewItem getItems={getItems} {...props} />
                 </div>
 
                 {items.map(item => <PersonalItemCard key={item.id} item={item} deleteItem={deleteItem} {...props} />)}
