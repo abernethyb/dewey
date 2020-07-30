@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react"
 import ApiManager from '../../modules/ApiManager';
-
+import "./Item.css"
 
 
 let activeUserId = sessionStorage.getItem("credentials")

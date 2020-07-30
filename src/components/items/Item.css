@@ -13,6 +13,18 @@
     width: 15rem;
     height: 25rem;
 }
+.new--item {
+    background-color: rgba(46, 196, 182, 1);
+    margin: .5rem;
+    padding: 1rem;
+    width: 15rem;
+    height: 25rem;
+    text-align: center;
+}
+.new--item--button button {
+    margin-top: 50%;
+    height: 10%;
+}
 .checkout--card {
     background-color: rgba(255, 159, 28, 1);
     margin: .5rem;

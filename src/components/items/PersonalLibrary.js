@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import PersonalItemCard from './PersonalItemCard';
 import ApiManager from '../../modules/ApiManager';
+import NewItem from "./newItem";
 
 let activeUserId = sessionStorage.getItem("credentials")
 let intActiveUserID = parseInt(activeUserId)
@@ -27,11 +28,15 @@ const PersonalLibrary = (props) => {
     return (
         <>
             <div className="item--list">
-                <button type="button"
-                    className="section--button"
-                    onClick={() => { props.history.push("/NewItem") }}>
-                    New Item
-                </button>
+                <div className="new--item">
+                    {/* <button type="button"
+                        className="section--button"
+                        onClick={() => { props.history.push("/NewItem") }}>
+                        New Item
+                    </button> */}
+                    <NewItem {...props} />
+                </div>
+
                 {items.map(item => <PersonalItemCard key={item.id} item={item} deleteItem={deleteItem} {...props} />)}
             </div>
         </>
