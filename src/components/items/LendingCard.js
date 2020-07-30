@@ -1,5 +1,6 @@
 
 import React from 'react';
+import "./Item.css"
 
 
 
@@ -18,7 +19,7 @@ const LendingCard = (props) => {
     return (
 
         <div className="card">
-            <div className="item--card">
+            <div className="lending--card">
                 <h2 className="item--name">{props.checkout.item.name}</h2>
                 <p>By: {props.checkout.item.author}</p>
                 <p>Borrower: {props.checkout.user.username} in {props.checkout.user.city}, {props.checkout.user.region} </p>

@@ -16,19 +16,12 @@ const NavBar = props => {
         Dewey
       </h1>
       <nav>
-        <ul className="container">
+        <ul className="nav--container">
           <li>
             <Link className="nav-link" to="/">
               Home
             </Link>
           </li>
-          {props.hasUser
-            ? <li>
-                <button className="nav-link" onClick={handleLogout}> Logout </button>
-              </li>
-            : <li>
-                <Link className="nav-link" to="/login">Login</Link>
-              </li>}
           <li>
             <Link className="nav-link" to="/PublicLibrary">
               Public Library
@@ -49,6 +42,13 @@ const NavBar = props => {
               Currently Lending
             </Link>
           </li>
+          {props.hasUser
+            ? <li>
+                <button className="nav-link" onClick={handleLogout}> Logout </button>
+              </li>
+            : <li>
+                <Link className="nav-link" to="/login">Login</Link>
+              </li>}
         </ul>
       </nav>
     </header>

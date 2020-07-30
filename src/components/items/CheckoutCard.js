@@ -1,6 +1,6 @@
 import ApiManager from '../../modules/ApiManager';
 import React, { useState, useEffect } from 'react';
-
+import "./Item.css"
 
 
 const CheckoutCard = (props) => {
@@ -57,7 +57,7 @@ const CheckoutCard = (props) => {
     return (
 
         <div className="card">
-            <div className="item--card">
+            <div className="checkout--card">
                 <h2 className="item--name">{props.checkout.item.name}</h2>
                 <p>By: {props.checkout.item.author}</p>
                 <p>Owner: {owner.username} in {owner.city}, {owner.region} </p>

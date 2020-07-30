@@ -27,6 +27,9 @@ export default {
     getEmbeddedWithExpand(table, embed, expand) {
         return fetch(`${remoteURL}/${table}/?_embed=${embed}&_expand=${expand}`).then(result => result.json())
     },
+    getEmbeddedWithTwoExpand(table, embed, expand, expandTwo) {
+        return fetch(`${remoteURL}/${table}/?_embed=${embed}&_expand=${expand}&_expand=${expandTwo}`).then(result => result.json())
+    },
     addObject(table, newObject) {
         return fetch(`${remoteURL}/${table}`, {
             method: "POST",

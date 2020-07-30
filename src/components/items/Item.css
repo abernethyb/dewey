@@ -1,0 +1,51 @@
+.item--card {
+    background-color: rgba(46, 196, 182, 1);
+    margin: .5rem;
+    padding: 1rem;
+    width: 15rem;
+    height: 25rem;
+}
+
+.personal--card {
+    background-color: rgba(255, 191, 105, 1);
+    margin: .5rem;
+    padding: 1rem;
+    width: 15rem;
+    height: 25rem;
+}
+.new--item {
+    background-color: rgba(46, 196, 182, 1);
+    margin: .5rem;
+    padding: 1rem;
+    width: 15rem;
+    height: 25rem;
+    text-align: center;
+}
+
+.edit--form {
+    background-color: rgb(209, 91, 44);
+    margin: .5rem 15rem;
+    padding: 2rem 1rem;
+    width: 15rem;
+    height: 25rem;
+    text-align: center;
+    
+}
+.new--item--button button {
+    margin-top: 50%;
+    height: 10%;
+}
+.checkout--card {
+    background-color: rgba(255, 159, 28, 1);
+    margin: .5rem;
+    padding: 1rem;
+    width: 15rem;
+    height: 25rem;
+}
+.lending--card {
+    background-color: rgba(114, 168, 185, 1);
+    margin: .5rem;
+    padding: 1rem;
+    width: 15rem;
+    height: 25rem;
+}

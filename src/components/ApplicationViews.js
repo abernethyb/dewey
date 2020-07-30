@@ -59,7 +59,7 @@ const ApplicationViews = (props) => {
                     }
                 }}
             />
-            <Route
+            {/* <Route
                 path="/NewItem"
                 render={props => {
                     if (hasUser) {
@@ -68,7 +68,7 @@ const ApplicationViews = (props) => {
                         return <Redirect to="/login" />
                     }
                 }}
-            />
+            /> */}
             <Route path="/PersonalLibrary/:itemId(\d+)/edit" render={props => {
                 if (hasUser) {
                     return <EditedItem {...props} />

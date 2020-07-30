@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react"
 import ApiManager from '../../modules/ApiManager';
-
+import "./Item.css"
 
 
 let activeUserId = sessionStorage.getItem("credentials")
@@ -20,14 +20,16 @@ const NewItem = props => {
 
     const constructNewItem = event => {
         event.preventDefault();
-        if (item.name === "") {
-            window.alert("Please input an item name");
+        if (item.name === "" || item.categoryId === "") {
+            window.alert("Please input an item name and category");
         } else {
             setIsLoading(true);
             item.categoryId = parseInt(item.categoryId)
-            item.year = parseInt(item.year)
+            item.year != "" ? item.year = parseInt(item.year) : item.year = item.year
             ApiManager.addObject("items", item)
-                .then(() => props.history.push("/PersonalLibrary"));
+                .then(() => props.getItems().then(() => {
+                    setIsLoading(false)
+                }));
         }
     };
     useEffect(() => {
@@ -45,6 +47,7 @@ const NewItem = props => {
         <>
             <form>
                 <fieldset>
+                    <h3>Add a New Item</h3>
                     <div classtitle="formgrid">
                         <input
                             type="text"
@@ -53,7 +56,7 @@ const NewItem = props => {
                             id="name"
                             placeholder="Item Name"
                         />
-                        <label htmlFor="title">name</label>
+                        {/* <label htmlFor="title">name</label> */}
                         <input
                             type="text"
                             required
@@ -61,7 +64,7 @@ const NewItem = props => {
                             id="author"
                             placeholder="Author"
                         />
-                        <label htmlFor="title">author</label>
+                        {/* <label htmlFor="title">author</label> */}
                         <input
                             type="text"
                             required
@@ -69,7 +72,7 @@ const NewItem = props => {
                             id="serial"
                             placeholder="Item serial number"
                         />
-                        <label htmlFor="title">serial Number</label>
+                        {/* <label htmlFor="title">serial Number</label> */}
                         <input
                             type="text"
                             required
@@ -77,7 +80,7 @@ const NewItem = props => {
                             id="isbn"
                             placeholder="ISBN number"
                         />
-                        <label htmlFor="isbn">ISBN number</label>
+                        {/* <label htmlFor="isbn">ISBN number</label> */}
                         <input
                             type="text"
                             required
@@ -85,7 +88,7 @@ const NewItem = props => {
                             id="makeOrPublisher"
                             placeholder="Manufacturer/Publisher"
                         />
-                        <label htmlFor="makeOrPublisher">Manufacturer/Publisher</label>
+                        {/* <label htmlFor="makeOrPublisher">Manufacturer/Publisher</label> */}
                         <input
                             type="text"
                             required
@@ -93,7 +96,7 @@ const NewItem = props => {
                             id="model"
                             placeholder="Item model"
                         />
-                        <label htmlFor="model">Model</label>
+                        {/* <label htmlFor="model">Model</label> */}
                         <input
                             type="number"
                             required
@@ -101,7 +104,7 @@ const NewItem = props => {
                             id="year"
                             placeholder="Year"
                         />
-                        <label htmlFor="year">Year manufactured/Printed</label>
+                        {/* <label htmlFor="year">Year manufactured/Printed</label> */}
                         <input
                             type="textarea"
                             required
@@ -109,7 +112,7 @@ const NewItem = props => {
                             id="otherInfo"
                             placeholder="Other"
                         />
-                        <label htmlFor="otherInfo">other information</label>
+                        {/* <label htmlFor="otherInfo">other information</label> */}
 
                         <select
                             className="form-control"
@@ -124,7 +127,7 @@ const NewItem = props => {
                             )}
                         </select>
 
-                        <label htmlFor="categoryId">category</label>
+                        {/* <label htmlFor="categoryId">category</label> */}
                     </div>
                     <div classtitle="alignRight">
                         <button

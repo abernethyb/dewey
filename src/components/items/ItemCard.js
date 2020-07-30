@@ -1,4 +1,5 @@
 import React from "react";
+import "./Item.css"
 
 
 
@@ -16,7 +17,7 @@ const ItemCard = (props) => {
     //console.log(milDate)
     let secDate = Math.round(milDate / 1000)
     // console.log(secDate)
-    let dueDate = secDate + 2419200 
+    let dueDate = secDate + 2419200
     //console.log(dueDate)
 
     const checkout = {
@@ -44,6 +45,21 @@ const ItemCard = (props) => {
         categoryId: props.item.categoryId,
         id: props.item.id
     }
+    let description = null
+    switch (props.item.categoryId) {
+        case 1:
+            description = props.item.otherInfo;
+            break;
+        case 2:
+            description = `By ${props.item.author}`;
+            break;
+        case 3:
+            description = `${props.item.makeOrPublisher}, ${props.item.year}`;
+            break;
+        default:
+            description = "";
+    }
+
 
 
     return (
@@ -51,15 +67,16 @@ const ItemCard = (props) => {
         <div className="card">
             <div className="item--card">
                 <h2 className="item--name">{props.item.name}</h2>
-                <p>By: {props.item.author}</p>
+                <h3>{props.item.category.name}</h3>
+                <p>{description}</p>
                 <p>{props.item.available ? 'available' : 'unavailable'}</p>
-                <p>Owner: {props.item.user.username}</p>
+                <p>Owned by {props.item.user.username} in  {props.item.user.city}, {props.item.user.region}</p>
                 <button
                     type="button"
                     className="card--button"
                     disabled={!props.item.available}
-                    onClick={() => props.postCheckout(checkout, unavailableItem)}>
-                        Checkout
+                    onClick={() => props.postCheckout(checkout, unavailableItem) }>
+                    Checkout
                 </button>
 
             </div>

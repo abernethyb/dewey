@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from "react"
 import ApiManager from '../../modules/ApiManager';
+import "./Item.css"
+import "./Library.css"
 
 
 
@@ -62,7 +64,7 @@ const EditedItem = props => {
 
     return (
         <>
-            <form>
+            <form className="edit--form">
                 <fieldset>
                     <div classtitle="formgrid">
                         <input
@@ -73,7 +75,7 @@ const EditedItem = props => {
                             value={item.name}
                             placeholder="Item Name"
                         />
-                        <label htmlFor="title">name</label>
+                        {/* <label htmlFor="title">name</label> */}
                         <input
                             type="text"
                             required
@@ -82,7 +84,7 @@ const EditedItem = props => {
                             value={item.author}
                             placeholder="Author"
                         />
-                        <label htmlFor="title">author</label>
+                        {/* <label htmlFor="title">author</label> */}
                         <input
                             type="text"
                             required
@@ -91,7 +93,7 @@ const EditedItem = props => {
                             value={item.serial}
                             placeholder="Item serial number"
                         />
-                        <label htmlFor="title">serial Number</label>
+                        {/* <label htmlFor="title">serial Number</label> */}
                         <input
                             type="text"
                             required
@@ -100,7 +102,7 @@ const EditedItem = props => {
                             value={item.isbn}
                             placeholder="ISBN number"
                         />
-                        <label htmlFor="isbn">ISBN number</label>
+                        {/* <label htmlFor="isbn">ISBN number</label> */}
                         <input
                             type="text"
                             required
@@ -109,7 +111,7 @@ const EditedItem = props => {
                             value={item.makeOrPublisher}
                             placeholder="Manufacturer/Publisher"
                         />
-                        <label htmlFor="makeOrPublisher">Manufacturer/Publisher</label>
+                        {/* <label htmlFor="makeOrPublisher">Manufacturer/Publisher</label> */}
                         <input
                             type="text"
                             required
@@ -118,7 +120,7 @@ const EditedItem = props => {
                             value={item.model}
                             placeholder="Item model"
                         />
-                        <label htmlFor="model">Model</label>
+                        {/* <label htmlFor="model">Model</label> */}
                         <input
                             type="number"
                             required
@@ -127,7 +129,7 @@ const EditedItem = props => {
                             value={item.year}
                             placeholder="Year"
                         />
-                        <label htmlFor="year">Year manufactured/Printed</label>
+                        {/* <label htmlFor="year">Year manufactured/Printed</label> */}
                         <input
                             type="textarea"
                             required
@@ -136,7 +138,7 @@ const EditedItem = props => {
                             value={item.otherInfo}
                             placeholder="Other"
                         />
-                        <label htmlFor="otherInfo">other information</label>
+                        {/* <label htmlFor="otherInfo">other information</label> */}
                         <select
                             className="form-control"
                             id="categoryId"
@@ -150,7 +152,7 @@ const EditedItem = props => {
                                 </option>
                             )}
                         </select>
-                        <label htmlFor="categoryId">category</label>
+                        {/* <label htmlFor="categoryId">category</label> */}
                     </div>
                     <div classtitle="alignRight">
                         <button
