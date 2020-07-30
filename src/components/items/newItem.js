@@ -20,8 +20,8 @@ const NewItem = props => {
 
     const constructNewItem = event => {
         event.preventDefault();
-        if (item.name === "") {
-            window.alert("Please input an item name");
+        if (item.name === "" || item.categoryId === "") {
+            window.alert("Please input an item name and category");
         } else {
             setIsLoading(true);
             item.categoryId = parseInt(item.categoryId)
