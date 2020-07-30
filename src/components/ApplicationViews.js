@@ -3,7 +3,7 @@ import React from "react";
 import PublicLibrary from "./items/PublicLibrary";
 import PersonalLibrary from "./items/PersonalLibrary";
 import EditedItem from "./items/EditItem";
-import NewItem from "./items/newItem";
+//import NewItem from "./items/newItem";
 import CheckoutList from "./items/CheckoutList";
 import LendingList from "./items/LendingList";
 import Login from "./auth/Login"
