@@ -5,13 +5,15 @@ import "./Item.css"
 
 const ItemCard = (props) => {
 
-    // "userId": 5,
-    // "itemId": 4,
-    // "checkoutDate": 1592179200,              
-    // "dueDate": 1594929662,
-    // "checkinDate": null,
-    // "checkedOut": true,
-    // "id": 1
+    let dateDue = null
+    props.item.checkouts.map(checkout => {
+        checkout.checkedOut ? dateDue = checkout.dueDate : (console.log("no"))
+    })
+    const dDate = new Date(dateDue * 1000)
+    const humanDueDate = `${dDate.getMonth() + 1}/${dDate.getDate()}/${dDate.getFullYear()}`
+
+    console.log("checkouts", props.item.checkouts)
+
 
     let milDate = Date.now()
     //console.log(milDate)
@@ -69,13 +71,13 @@ const ItemCard = (props) => {
                 <h2 className="item--name">{props.item.name}</h2>
                 <h3>{props.item.category.name}</h3>
                 <p>{description}</p>
-                <p>{props.item.available ? 'available' : 'unavailable'}</p>
+                <p>{props.item.available ? `available` : `unavailable. Due on: ${humanDueDate}`}</p>
                 <p>Owned by {props.item.user.username} in  {props.item.user.city}, {props.item.user.region}</p>
                 <button
                     type="button"
                     className="card--button"
                     disabled={!props.item.available}
-                    onClick={() => props.postCheckout(checkout, unavailableItem) }>
+                    onClick={() => props.postCheckout(checkout, unavailableItem)}>
                     Checkout
                 </button>
 

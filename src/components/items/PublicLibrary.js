@@ -10,7 +10,7 @@ const PublicLibrary = (props) => {
     const [items, setItems] = useState([]);
 
     const getItems = () => {
-        return ApiManager.getTwoExpanded("items", "user", "category").then(itemsFromAPI => {
+        return ApiManager.getEmbeddedWithTwoExpand("items", "checkouts", "user", "category").then(itemsFromAPI => {
             setItems(itemsFromAPI)
         });
     };
