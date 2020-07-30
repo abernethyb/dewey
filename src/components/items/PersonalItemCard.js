@@ -27,6 +27,7 @@ const PersonalItemCard = (props) => {
             {props.item.available ?
             <div className="personal--card">
                 <h2 className="item--name">{props.item.name}</h2>
+                <h3>{props.item.category.name}</h3>
                 <p>{description}</p>
                 <h3>{props.item.available ? 'Available' : 'Unavailable'}</h3>
                 <button type="button"
@@ -44,6 +45,7 @@ const PersonalItemCard = (props) => {
             :
             <div className="personal--card--unavailable">
             <h2 className="item--name">{props.item.name}</h2>
+            <h3>{props.item.category.name}</h3>
             <p>{description}</p>
             <h3>{props.item.available ? 'Available' : 'UNAVAILABLE'}</h3>
             <button type="button"
