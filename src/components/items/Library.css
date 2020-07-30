@@ -1,0 +1,18 @@
+/* body {
+    background-color: rgba(203, 243, 240, 1);
+} */
+
+
+
+.item--list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    background-color: rgba(203, 243, 240, 1)
+}
+
+.library--title {
+    display: flex;
+    width: 100%;
+    justify-content: space-around;
+}

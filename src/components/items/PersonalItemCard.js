@@ -1,4 +1,5 @@
 import React from "react";
+import "./Item.css"
 
 
 
@@ -10,7 +11,7 @@ const PersonalItemCard = (props) => {
     return (
 
         <div className="card">
-            <div className="item--card">
+            <div className="personal--card">
                 <h2 className="item--name">{props.item.name}</h2>
                 <p>By: {props.item.author}</p>
                 <p>{props.item.available ? 'available' : 'unavailable'}</p>
