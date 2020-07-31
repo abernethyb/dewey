@@ -59,9 +59,9 @@ const CheckoutCard = (props) => {
         <div className="card">
             <div className="checkout--card">
                 <h2 className="item--name">{props.checkout.item.name}</h2>
-                <p>By: {props.checkout.item.author}</p>
+                {/* <p>By: {props.checkout.item.author}</p> */}
                 <p>Owner: {owner.username} in {owner.city}, {owner.region} </p>
-                <p>Description: </p>
+                {/* <p>Description: </p> */}
                 <p>status: {props.checkout.checkedOut ? 'checked out' : 'returned'}</p>
                 <p>Checkout Date: {checkoutDate}</p>
                 <p>Due Date: {dueDate}</p>

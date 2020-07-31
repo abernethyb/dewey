@@ -21,9 +21,9 @@ const LendingCard = (props) => {
         <div className="card">
             <div className="lending--card">
                 <h2 className="item--name">{props.checkout.item.name}</h2>
-                <p>By: {props.checkout.item.author}</p>
+                {/* <p>By: {props.checkout.item.author}</p> */}
                 <p>Borrower: {props.checkout.user.username} in {props.checkout.user.city}, {props.checkout.user.region} </p>
-                <p>Description: </p>
+                {/* <p>Description: </p> */}
                 <p>status: {props.checkout.checkedOut ? 'checked out' : 'returned'}</p>
                 <p>Checkout Date: {checkoutDate}</p>
                 <p>Due Date: {dueDate}</p>
