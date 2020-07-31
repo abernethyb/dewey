@@ -2,8 +2,8 @@ import React, { useState, useEffect } from 'react';
 import LendingCard from './LendingCard';
 import ApiManager from '../../modules/ApiManager';
 
-let activeUserId = sessionStorage.getItem("credentials")
-let intActiveUserID = parseInt(activeUserId)
+// let activeUserId = sessionStorage.getItem("credentials")
+// let intActiveUserID = parseInt(activeUserId)
 
 const LendingList = (props) => {
     const [checkouts, setCheckouts] = useState([]);

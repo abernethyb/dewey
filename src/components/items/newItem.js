@@ -3,11 +3,12 @@ import ApiManager from '../../modules/ApiManager';
 import "./Item.css"
 
 
-let activeUserId = sessionStorage.getItem("credentials")
-let intActiveUserID = parseInt(activeUserId)
+// let activeUserId = sessionStorage.getItem("credentials")
+// let intActiveUserID = parseInt(activeUserId)
+//parseInt(sessionStorage.getItem("credentials"))
 
 const NewItem = props => {
-    const [item, setItem] = useState({ userId: intActiveUserID, name: "", author: "", available: true, serial: "", isbn: "", makeOrPublisher: "", model: "", year: "", otherInfo: "", categoryId: "" });
+    const [item, setItem] = useState({ userId: parseInt(sessionStorage.getItem("credentials")), name: "", author: "", available: true, serial: "", isbn: "", makeOrPublisher: "", model: "", year: "", otherInfo: "", categoryId: "" });
     const [categories, setCategories] = useState([]);
     const [isLoading, setIsLoading] = useState(false);
 

@@ -5,11 +5,12 @@ import "./Library.css"
 
 
 
-let activeUserId = sessionStorage.getItem("credentials")
-let intActiveUserID = parseInt(activeUserId)
+// let activeUserId = sessionStorage.getItem("credentials")
+// let intActiveUserID = parseInt(activeUserId)
+//parseInt(sessionStorage.getItem("credentials"))
 
 const EditedItem = props => {
-    const [item, setItem] = useState({ userId: intActiveUserID, name: "", author: "", serial: "", isbn: "", makeOrPublisher: "", model: "", year: "", otherInfo: "", categoryId: "" });
+    const [item, setItem] = useState({ userId: parseInt(sessionStorage.getItem("credentials")), name: "", author: "", serial: "", isbn: "", makeOrPublisher: "", model: "", year: "", otherInfo: "", categoryId: "" });
     const [categories, setCategories] = useState([]);
     const [isLoading, setIsLoading] = useState(false);
 

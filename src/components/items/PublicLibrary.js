@@ -3,8 +3,9 @@ import ItemCard from './ItemCard';
 import ApiManager from '../../modules/ApiManager';
 import "./Library.css"
 
-let activeUserId = sessionStorage.getItem("credentials")
-let intActiveUserID = parseInt(activeUserId)
+// let activeUserId = sessionStorage.getItem("credentials")
+// let intActiveUserID = parseInt(activeUserId)
+//parseInt(sessionStorage.getItem("credentials"))
 
 const PublicLibrary = (props) => {
     const [items, setItems] = useState([]);
@@ -35,7 +36,7 @@ const PublicLibrary = (props) => {
         <>
             <div className="item--list">
                 <h1 className="library--title">Public Library</h1>
-                {items.map(item => intActiveUserID !== item.user.id && <ItemCard key={item.id} item={item} postCheckout={postCheckout} intActiveUserID={intActiveUserID} {...props} />)}
+                {items.map(item => parseInt(sessionStorage.getItem("credentials")) !== item.user.id && <ItemCard key={item.id} item={item} postCheckout={postCheckout} {...props} />)}
             </div>
         </>
     );
