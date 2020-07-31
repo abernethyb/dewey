@@ -5,6 +5,15 @@ import "./Item.css"
 
 const PersonalItemCard = (props) => {
 
+    let dateDue = null
+    props.item.checkouts.map(checkout => {
+        checkout.checkedOut ? dateDue = checkout.dueDate : (console.log("no"))
+    })
+    const dDate = new Date(dateDue * 1000)
+    const humanDueDate = `${dDate.getMonth() + 1}/${dDate.getDate()}/${dDate.getFullYear()}`
+
+
+
     let description = null
     switch (props.item.categoryId) {
         case 1:
@@ -47,7 +56,8 @@ const PersonalItemCard = (props) => {
             <h2 className="item--name">{props.item.name}</h2>
             <h3>{props.item.category.name}</h3>
             <p>{description}</p>
-            <h3>{props.item.available ? 'Available' : 'UNAVAILABLE'}</h3>
+            <h3 className="unavailable--display">{props.item.available ? 'Available' : 'UNAVAILABLE'}</h3>
+            <p>Due on: {humanDueDate}</p>
             <button type="button"
                 disabled
                 onClick={() => props.history.push(`/PersonalLibrary/${props.item.id}/edit`)}>

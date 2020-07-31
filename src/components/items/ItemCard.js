@@ -12,7 +12,7 @@ const ItemCard = (props) => {
     const dDate = new Date(dateDue * 1000)
     const humanDueDate = `${dDate.getMonth() + 1}/${dDate.getDate()}/${dDate.getFullYear()}`
 
-    console.log("checkouts", props.item.checkouts)
+    //console.log("checkouts", props.item.checkouts)
 
 
     let milDate = Date.now()
@@ -88,7 +88,7 @@ const ItemCard = (props) => {
                 <h2 className="item--name">{props.item.name}</h2>
                 <h3>{props.item.category.name}</h3>
                 <p>{description}</p>
-                <h3>{props.item.available ? `Available` : `UNAVAILABLE`}</h3>
+                <h3 className="unavailable--display">{props.item.available ? `Available` : `UNAVAILABLE`}</h3>
                 <p>Due on: {humanDueDate}</p>
                 <p>Owned by {props.item.user.username} in  {props.item.user.city}, {props.item.user.region}</p>
                 <button
