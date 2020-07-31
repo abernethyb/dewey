@@ -1,5 +1,6 @@
 .item--card {
     background-color: rgba(46, 196, 182, 1);
+    box-shadow: 0 4px 8px 0 rgba(0,0,0, 0.4);
     margin: .5rem;
     padding: 1rem;
     width: 15rem;
@@ -8,6 +9,7 @@
 .item--card--unavailable {
     background-color: rgba(46, 196, 182, .5);
     color: rgba(0, 0, 0, .5);
+    box-shadow: 0 4px 8px 0 rgba(0,0,0, 0.4);
     margin: .5rem;
     padding: 1rem;
     width: 15rem;
@@ -16,6 +18,7 @@
 
 .personal--card {
     background-color: rgba(255, 191, 105, 1);
+    box-shadow: 0 4px 8px 0 rgba(0,0,0, 0.4);
     margin: .5rem;
     padding: 1rem;
     width: 15rem;
@@ -24,6 +27,7 @@
 .personal--card--unavailable {
     background-color: rgba(255, 191, 105, .5);
     color: rgba(0, 0, 0, .5);
+    box-shadow: 0 4px 8px 0 rgba(0,0,0, 0.4);
     margin: .5rem;
     padding: 1rem;
     width: 15rem;
@@ -31,6 +35,7 @@
 }
 .new--item {
     background-color: rgba(46, 196, 182, 1);
+    box-shadow: 0 4px 8px 0 rgba(0,0,0, 0.4);
     margin: .5rem;
     padding: 1rem;
     width: 15rem;
@@ -40,6 +45,7 @@
 
 .edit--form {
     background-color: rgb(209, 91, 44);
+    box-shadow: 0 4px 8px 0 rgba(0,0,0, 0.4);
     margin: .5rem 15rem;
     padding: 2rem 1rem;
     width: 15rem;
@@ -53,6 +59,7 @@
 }
 .checkout--card {
     background-color: rgba(255, 159, 28, 1);
+    box-shadow: 0 4px 8px 0 rgba(0,0,0, 0.4);
     margin: .5rem;
     padding: 1rem;
     width: 15rem;
@@ -60,6 +67,7 @@
 }
 .lending--card {
     background-color: rgba(114, 168, 185, 1);
+    box-shadow: 0 4px 8px 0 rgba(0,0,0, 0.4);
     margin: .5rem;
     padding: 1rem;
     width: 15rem;
