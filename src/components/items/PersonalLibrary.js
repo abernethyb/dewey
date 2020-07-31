@@ -3,14 +3,15 @@ import PersonalItemCard from './PersonalItemCard';
 import ApiManager from '../../modules/ApiManager';
 import NewItem from "./newItem";
 
-let activeUserId = sessionStorage.getItem("credentials")
-let intActiveUserID = parseInt(activeUserId)
+// let activeUserId = sessionStorage.getItem("credentials")
+// let intActiveUserID = parseInt(activeUserId)
+//parseInt(sessionStorage.getItem("credentials"))
 
 const PersonalLibrary = (props) => {
     const [items, setItems] = useState([]);
 
     const getItems = () => {
-        return ApiManager.getEmbededTwiceExpandedByUserId("items", intActiveUserID, "checkouts", "user", "category").then(itemsFromAPI => {
+        return ApiManager.getEmbededTwiceExpandedByUserId("items", parseInt(sessionStorage.getItem("credentials")), "checkouts", "user", "category").then(itemsFromAPI => {
             setItems(itemsFromAPI)
         });
     };
@@ -22,7 +23,7 @@ const PersonalLibrary = (props) => {
 
     useEffect(() => {
         getItems();
-    }, []);
+    }, [props.hasUser]);
 
 
     return (
