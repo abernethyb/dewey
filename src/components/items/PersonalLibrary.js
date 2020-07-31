@@ -10,7 +10,7 @@ const PersonalLibrary = (props) => {
     const [items, setItems] = useState([]);
 
     const getItems = () => {
-        return ApiManager.getExpandedByUserId("items", intActiveUserID, "user").then(itemsFromAPI => {
+        return ApiManager.getEmbededTwiceExpandedByUserId("items", intActiveUserID, "checkouts", "user", "category").then(itemsFromAPI => {
             setItems(itemsFromAPI)
         });
     };
