@@ -11,3 +11,33 @@ input {
 fieldset {
     border: none;
 }
+
+.login--form--container {
+    /* background-color: rgba(46, 196, 182, 1); */
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.4);
+    border-radius: 0.4rem;
+    margin: .5rem;
+    padding: 1rem;
+    width: 35rem;
+    height: 25rem;
+}
+
+.login--container {
+    display: flex;
+    justify-content: center;
+}
+
+.registration--form--container {
+    /* background-color: rgba(46, 196, 182, 1); */
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.4);
+    border-radius: 0.4rem;
+    margin: .5rem;
+    padding: 1rem;
+    width: 35rem;
+    height: 35rem;
+}
+
+.registration--container {
+    display: flex;
+    justify-content: center;
+}
