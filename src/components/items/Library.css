@@ -9,7 +9,7 @@
     flex-wrap: wrap;
     margin: 2rem 1rem;
     justify-content: flex-start;
-    background-color: rgba(203, 243, 240, 0.493);
+    background-color: rgba(203, 243, 240, 0.3);
     box-shadow: 0 4px 8px 0 rgba(0,0,0, 0.4);
     border-radius: 0.4rem;
 }

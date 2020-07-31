@@ -12,10 +12,13 @@ const NavBar = props => {
 
   return (
     <header>
-      <h1 className="site-title">
-        Dewey
+      <div className="header--top">
+        <h1 className="site-title">
+          Dewey
       </h1>
-      <h2 className="user--name">{sessionStorage.getItem("username")}</h2>
+        <h2 className="user--name">{sessionStorage.getItem("username")}</h2>
+      </div>
+
       <nav>
         <ul className="nav--container">
           <li>
