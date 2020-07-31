@@ -66,13 +66,13 @@ const Login = props => {
                         id="username"
                         placeholder="username"
                         required="" autoFocus="" />
-                    <label htmlFor="inputUsername">Username</label>
+                    {/* <label htmlFor="inputUsername">Username</label> */}
 
                     <input onChange={handleFieldChange} type="password"
                         id="password"
                         placeholder="Password"
                         required="" />
-                    <label htmlFor="inputPassword">Password</label>
+                    {/* <label htmlFor="inputPassword">Password</label> */}
                 </div>
                 <button type="submit">Sign in</button>
                 <button type="button" onClick={() => props.history.push(`/Registration`)}>Register New User</button>

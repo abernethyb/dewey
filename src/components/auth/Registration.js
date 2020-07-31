@@ -93,7 +93,7 @@ const Registration = props => {
                         id="username"
                         placeholder="username"
                         required />
-                    <label htmlFor="username">Username</label>
+                    {/* <label htmlFor="username">Username</label> */}
 
                     <input 
                         onChange={handleFieldChange} 
@@ -101,39 +101,39 @@ const Registration = props => {
                         id="email"
                         placeholder="email"
                         required="" autoFocus="" />
-                    <label htmlFor="email">Email</label>
+                    {/* <label htmlFor="email">Email</label> */}
                     <input 
                         onChange={handleFieldChange} 
                         type="text"
                         id="city"
                         placeholder="city"
                         required="" autoFocus="" />
-                    <label htmlFor="city">City</label>
-                    <input 
+                    {/* <label htmlFor="city">City</label> */}
+                    {/* <input 
                         onChange={handleFieldChange} 
                         type="text"
                         id="city"
                         placeholder="city"
                         required="" autoFocus="" />
-                    <label htmlFor="city">City</label>
+                    <label htmlFor="city">City</label> */}
                     <input 
                         onChange={handleFieldChange} 
                         type="text"
                         id="region"
                         placeholder="State/Region"
                         required="" autoFocus="" />
-                    <label htmlFor="region">State/Region</label>
+                    {/* <label htmlFor="region">State/Region</label> */}
 
                     <input onChange={handleFieldChange} type="password"
                         id="password"
                         placeholder="Password"
                         required="" />
-                    <label htmlFor="password">Password</label>
+                    {/* <label htmlFor="password">Password</label> */}
                     <input onChange={setPasswordConf} type="password"
                         id="passwordConf"
                         placeholder="Re-enter Password"
                         required="" />
-                    <label htmlFor="passwordConf">Re-enter Password</label>
+                    {/* <label htmlFor="passwordConf">Re-enter Password</label> */}
                 </div>
                 <button
                     type="submit"
