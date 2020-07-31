@@ -53,7 +53,7 @@ const ApplicationViews = (props) => {
                 path="/PersonalLibrary"
                 render={props => {
                     if (hasUser) {
-                        return <PersonalLibrary {...props} />;
+                        return <PersonalLibrary hasUser={hasUser} {...props} />;
                     } else {
                         return <Redirect to="/login" />
                     }

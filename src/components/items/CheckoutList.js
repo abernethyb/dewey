@@ -2,8 +2,8 @@ import React, { useState, useEffect } from 'react';
 import CheckoutCard from './CheckoutCard';
 import ApiManager from '../../modules/ApiManager';
 
-let activeUserId = sessionStorage.getItem("credentials")
-let intActiveUserID = parseInt(activeUserId)
+// let activeUserId = sessionStorage.getItem("credentials")
+// let intActiveUserID = parseInt(activeUserId)
 const CheckoutList = (props) => {
     const [checkouts, setCheckouts] = useState([]);
     //console.log(checkouts)
@@ -38,7 +38,7 @@ const CheckoutList = (props) => {
         <>
             <div className="item--list">
             <h1 className="library--title">Items You're Currently Borrowing</h1>
-                {checkouts.map(checkout => checkout.userId === intActiveUserID && checkout.checkedOut && <CheckoutCard key={checkout.id} checkout={checkout} checkin={checkin} {...props} />)}
+                {checkouts.map(checkout => checkout.userId === parseInt(sessionStorage.getItem("credentials")) && checkout.checkedOut && <CheckoutCard key={checkout.id} checkout={checkout} checkin={checkin} {...props} />)}
             </div>
         </>
     );

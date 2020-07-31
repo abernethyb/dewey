@@ -23,7 +23,7 @@ const ItemCard = (props) => {
     //console.log(dueDate)
 
     const checkout = {
-        userId: props.intActiveUserID,
+        userId: parseInt(sessionStorage.getItem("credentials")),
         itemId: props.item.id,
         checkoutDate: secDate,
         dueDate: dueDate,
