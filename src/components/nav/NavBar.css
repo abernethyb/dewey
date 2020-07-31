@@ -1,5 +1,7 @@
 header {
-    background-color: rgba(203, 243, 240, 1);
+    background-color: rgba(203, 243, 240, 0.493);
+    box-shadow: 0 4px 8px 0 rgba(0,0,0, 0.4);
+    border-radius: 0.4rem;
     /* display: flex;
     flex-direction: row; */
     margin: 1rem;
