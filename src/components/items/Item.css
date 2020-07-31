@@ -1,3 +1,39 @@
+/* button {
+    background-color: rgba(44, 200, 249, 1);
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    display: inline-block;
+    font-size: 16px;
+  } */
+
+  /* .card--button {
+    background-color: rgba(31, 149, 234, 0.7);
+    box-shadow: 0 4px 8px 0 rgba(0 ,0, 0, 0.1);
+    border-radius: 0.4rem;
+    border: none;
+    color: black;
+    padding: 0.5rem 1rem;
+    text-align: center;
+    display: inline-block;
+    text-decoration: none;
+    font-size: 16px;
+    margin: 1rem;
+}
+  
+  .item--card button:hover {
+    color: brown;
+    background-color: rgba(31, 149, 234, 1);
+    box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.4);
+  }
+
+  .item--card--unavailable button {
+    background-color: rgba(186, 216, 238, 0.3);
+} */
+
+
+
 .item--card {
     background-color: rgba(46, 196, 182, 1);
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.4);
@@ -20,6 +56,7 @@
     width: 15rem;
     height: 25rem;
 }
+
 
 .personal--card {
     background-color: rgba(255, 191, 105, 1);
@@ -53,6 +90,7 @@
     height: 25rem;
     text-align: center;
 }
+
 .new--item:hover {
     box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.4);
   }
@@ -101,3 +139,17 @@
 .lending--card:hover {
     box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.4);
   }
+
+  .new--item input {
+    width: 100%;
+    /* padding: 12px 20px; */
+    margin: 0.4rem 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    /* box-sizing: border-box; */
+}
+
+.new--item fieldset {
+    border: none;
+}

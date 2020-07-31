@@ -1,5 +1,6 @@
 import React, { useState } from "react"
 import ApiManager from "../../modules/ApiManager"
+import "./Auth.css"
 
 // "username": "Bob Doe",
 // "email": "bob@email.com",
