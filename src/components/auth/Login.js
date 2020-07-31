@@ -1,5 +1,6 @@
 import React, { useState } from "react"
 import ApiManager from "../../modules/ApiManager"
+import "./Auth.css"
 
 // "username": "Bob Doe",
 // "email": "bob@email.com",
@@ -11,7 +12,7 @@ import ApiManager from "../../modules/ApiManager"
 
 
 const Login = props => {
-    const [credentials, setCredentials] = useState({ username: "", password: ""});
+    const [credentials, setCredentials] = useState({ username: "", password: "" });
 
     // Update state whenever an input field is edited
     const handleFieldChange = (event) => {
@@ -24,7 +25,7 @@ const Login = props => {
 
         event.preventDefault();
 
-        
+
 
         ApiManager.getAll("users").then((users) => {
             let badLogin
@@ -56,28 +57,34 @@ const Login = props => {
     }
 
     return (
-        <form onSubmit={handleLogin}>
-            <fieldset>
-                <h1>Welcome to Dewey</h1>
-                <h3>Your Personal Public Library</h3>
-                <h3>Please sign in to continue</h3>
-                <div className="formgrid">
-                    <input onChange={handleFieldChange} type="username"
-                        id="username"
-                        placeholder="username"
-                        required="" autoFocus="" />
-                    {/* <label htmlFor="inputUsername">Username</label> */}
+        <div className="login--container">
+            <div className="login--form--container">
+            <form onSubmit={handleLogin}>
+                <fieldset>
+                    <h1>Welcome to Dewey</h1>
+                    <h3>Your Personal Public Library</h3>
+                    <h3>Please sign in to continue</h3>
+                    <div className="formgrid">
+                        <input onChange={handleFieldChange} type="username"
+                            id="username"
+                            placeholder="username"
+                            required="" autoFocus="" />
+                        {/* <label htmlFor="inputUsername">Username</label> */}
 
-                    <input onChange={handleFieldChange} type="password"
-                        id="password"
-                        placeholder="Password"
-                        required="" />
-                    {/* <label htmlFor="inputPassword">Password</label> */}
-                </div>
-                <button type="submit">Sign in</button>
-                <button type="button" onClick={() => props.history.push(`/Registration`)}>Register New User</button>
-            </fieldset>
-        </form>
+                        <input onChange={handleFieldChange} type="password"
+                            id="password"
+                            placeholder="Password"
+                            required="" />
+                        {/* <label htmlFor="inputPassword">Password</label> */}
+                    </div>
+                    <button type="submit">Sign in</button>
+                    <button type="button" onClick={() => props.history.push(`/Registration`)}>Register New User</button>
+                </fieldset>
+            </form>
+            </div>
+
+        </div>
+
     );
 };
 

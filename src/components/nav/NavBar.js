@@ -12,9 +12,13 @@ const NavBar = props => {
 
   return (
     <header>
-      <h1 className="site-title">
-        Dewey
+      <div className="header--top">
+        <h1 className="site-title">
+          Dewey
       </h1>
+        <h2 className="user--name">{sessionStorage.getItem("username")}</h2>
+      </div>
+
       <nav>
         <ul className="nav--container">
           <li>
@@ -44,11 +48,11 @@ const NavBar = props => {
           </li>
           {props.hasUser
             ? <li>
-                <button className="nav-link" onClick={handleLogout}> Logout </button>
-              </li>
+              <button className="nav-link" onClick={handleLogout}> Logout </button>
+            </li>
             : <li>
-                <Link className="nav-link" to="/login">Login</Link>
-              </li>}
+              <Link className="nav-link" to="/login">Login</Link>
+            </li>}
         </ul>
       </nav>
     </header>

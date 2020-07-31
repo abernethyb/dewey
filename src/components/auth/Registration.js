@@ -1,6 +1,7 @@
 
 import React, { useState } from "react"
 import ApiManager from "../../modules/ApiManager"
+import "./Auth.css"
 
 // "username": "Bob Doe",
 // "email": "bob@email.com",
@@ -12,14 +13,14 @@ import ApiManager from "../../modules/ApiManager"
 const Registration = props => {
     const [newUser, setNewUser] = useState({ username: "", email: "", password: "", city: "", region: "" });
     const [isLoading, setIsLoading] = useState(false);
-    
+
     let passwordConf = ""
     const setPasswordConf = (event) => {
         passwordConf = event.target.value
         console.log("passwordConf", passwordConf)
         return passwordConf
     }
-    
+
 
     const handleFieldChange = (evt) => {
         const stateToChange = { ...newUser };
@@ -32,7 +33,7 @@ const Registration = props => {
             window.alert("Please fill out all fields");
         } else {
             setIsLoading(true);
-            
+
             let duplicateUser = false
             ApiManager.getAll("users").then((users) => {
 
@@ -67,7 +68,7 @@ const Registration = props => {
                             props.setUser(response)
                             props.history.push("/");
                         })
-                }else if (newUser.password !== passwordConf) {
+                } else if (newUser.password !== passwordConf) {
                     window.alert("Password and confirmation password did not match.  Please try again.");
                     console.log("this shouldn't post to db")
                 } else {
@@ -76,74 +77,79 @@ const Registration = props => {
                 setIsLoading(false)
             })
 
-            
+
 
         }
     };
 
     return (
-        <form onSubmit={handleFieldChange}>
-            <fieldset>
-                <h2>New to Dewey?</h2>
-                <h3>Sign up Below:</h3>
-                <div className="formgrid">
-                    <input
-                        onChange={handleFieldChange}
-                        type="username"
-                        id="username"
-                        placeholder="username"
-                        required />
-                    {/* <label htmlFor="username">Username</label> */}
+        <div className="registration--container">
+            <div className="registration--form--container">
+                <form onSubmit={handleFieldChange}>
+                    <fieldset>
+                        <h2>New to Dewey?</h2>
+                        <h3>Sign up Below:</h3>
+                        <div className="formgrid">
+                            <input
+                                onChange={handleFieldChange}
+                                type="username"
+                                id="username"
+                                placeholder="username"
+                                required />
+                            {/* <label htmlFor="username">Username</label> */}
 
-                    <input 
-                        onChange={handleFieldChange} 
-                        type="email"
-                        id="email"
-                        placeholder="email"
-                        required="" autoFocus="" />
-                    {/* <label htmlFor="email">Email</label> */}
-                    <input 
-                        onChange={handleFieldChange} 
-                        type="text"
-                        id="city"
-                        placeholder="city"
-                        required="" autoFocus="" />
-                    {/* <label htmlFor="city">City</label> */}
-                    {/* <input 
+                            <input
+                                onChange={handleFieldChange}
+                                type="email"
+                                id="email"
+                                placeholder="email"
+                                required="" autoFocus="" />
+                            {/* <label htmlFor="email">Email</label> */}
+                            <input
+                                onChange={handleFieldChange}
+                                type="text"
+                                id="city"
+                                placeholder="city"
+                                required="" autoFocus="" />
+                            {/* <label htmlFor="city">City</label> */}
+                            {/* <input 
                         onChange={handleFieldChange} 
                         type="text"
                         id="city"
                         placeholder="city"
                         required="" autoFocus="" />
                     <label htmlFor="city">City</label> */}
-                    <input 
-                        onChange={handleFieldChange} 
-                        type="text"
-                        id="region"
-                        placeholder="State/Region"
-                        required="" autoFocus="" />
-                    {/* <label htmlFor="region">State/Region</label> */}
+                            <input
+                                onChange={handleFieldChange}
+                                type="text"
+                                id="region"
+                                placeholder="State/Region"
+                                required="" autoFocus="" />
+                            {/* <label htmlFor="region">State/Region</label> */}
 
-                    <input onChange={handleFieldChange} type="password"
-                        id="password"
-                        placeholder="Password"
-                        required="" />
-                    {/* <label htmlFor="password">Password</label> */}
-                    <input onChange={setPasswordConf} type="password"
-                        id="passwordConf"
-                        placeholder="Re-enter Password"
-                        required="" />
-                    {/* <label htmlFor="passwordConf">Re-enter Password</label> */}
-                </div>
-                <button
-                    type="submit"
-                    disabled={isLoading}
-                    onClick={constructNewUser}
+                            <input onChange={handleFieldChange} type="password"
+                                id="password"
+                                placeholder="Password"
+                                required="" />
+                            {/* <label htmlFor="password">Password</label> */}
+                            <input onChange={setPasswordConf} type="password"
+                                id="passwordConf"
+                                placeholder="Re-enter Password"
+                                required="" />
+                            {/* <label htmlFor="passwordConf">Re-enter Password</label> */}
+                        </div>
+                        <button
+                            type="submit"
+                            disabled={isLoading}
+                            onClick={constructNewUser}
 
-                >Sign up
-                </button>
-            </fieldset>
-        </form>
+                        >Sign up
+                        </button>
+                    </fieldset>
+                </form>
+            </div>
+        </div>
+
     );
 };
 

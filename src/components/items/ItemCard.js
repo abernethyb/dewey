@@ -27,7 +27,7 @@ const ItemCard = (props) => {
         itemId: props.item.id,
         checkoutDate: secDate,
         dueDate: dueDate,
-        checkinDate: null,
+        checkinDate: "",
         checkedOut: true,
 
 
