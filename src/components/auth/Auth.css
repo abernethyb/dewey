@@ -1,15 +1,6 @@
-input {
-    width: 100%;
-    padding: 12px 20px;
-    margin: 0.4rem 0;
-    display: inline-block;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    box-sizing: border-box;
-}
 
-fieldset {
-    border: none;
+button {
+    margin: 1rem 0.5rem;
 }
 
 .login--form--container {
@@ -40,4 +31,31 @@ fieldset {
 .registration--container {
     display: flex;
     justify-content: center;
+}
+
+.registration--form--container input {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 0.4rem 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+.registration--form--container fieldset {
+    border: none;
+}
+.login--form--container input {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 0.4rem 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+.login--form--container fieldset {
+    border: none;
 }
