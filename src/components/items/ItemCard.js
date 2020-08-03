@@ -25,10 +25,11 @@ const ItemCard = (props) => {
     const checkout = {
         userId: parseInt(sessionStorage.getItem("credentials")),
         itemId: props.item.id,
-        checkoutDate: secDate,
-        dueDate: dueDate,
+        checkoutDate: "",
+        dueDate: "",
         checkinDate: "",
-        checkedOut: true,
+        checkedOut: false,
+        declined : false
 
 
     };
@@ -79,7 +80,7 @@ const ItemCard = (props) => {
                     className="card--button"
                     disabled={!props.item.available}
                     onClick={() => props.postCheckout(checkout, unavailableItem)}>
-                    Checkout
+                    Request Checkout
                 </button>
 
             </div>
@@ -96,7 +97,7 @@ const ItemCard = (props) => {
                     className="card--button"
                     disabled={!props.item.available}
                     onClick={() => props.postCheckout(checkout, unavailableItem)}>
-                    Checkout
+                    Request Checkout
                 </button>
 
             </div>

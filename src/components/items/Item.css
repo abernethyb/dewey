@@ -126,6 +126,19 @@
 .checkout--card:hover {
     box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.4);
   }
+  .checkout--card--unapproved {
+    background-color: rgba(255, 191, 105, 0.5);
+    color: rgba(0, 0, 0, .5);
+    box-shadow: 0 4px 8px 0 rgba(0,0,0, 0.4);
+    border-radius: 0.4rem;
+    margin: .5rem;
+    padding: 1rem;
+    width: 15rem;
+    height: 25rem;
+}
+
+
+  
 .lending--card {
     background-color: rgba(46, 196, 182, 1);
     box-shadow: 0 4px 8px 0 rgba(0,0,0, 0.4);
@@ -137,6 +150,19 @@
 }
 
 .lending--card:hover {
+    box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.4);
+  }
+.request--card {
+    background-color: rgb(209, 91, 44);
+    box-shadow: 0 4px 8px 0 rgba(0,0,0, 0.4);
+    border-radius: 0.4rem;
+    margin: .5rem;
+    padding: 1rem;
+    width: 15rem;
+    height: 25rem;
+}
+
+.request--card:hover {
     box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.4);
   }
 
