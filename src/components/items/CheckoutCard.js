@@ -26,7 +26,7 @@ const CheckoutCard = (props) => {
     //console.log(milDate)
     let secDate = Math.round(milDate / 1000)
     // console.log(secDate)
-//"hidden": false,
+
     const checkin = {
         userId: props.checkout.userId,
         itemId: props.checkout.itemId,
@@ -75,63 +75,47 @@ const CheckoutCard = (props) => {
 
         <div className="card">
             {props.checkout.checkedOut ?
-            <div className="checkout--card">
-                <h2 className="item--name">{props.checkout.item.name}</h2>
-                {/* <p>By: {props.checkout.item.author}</p> */}
-                <p>Owner: {owner.username} in {owner.city}, {owner.region} </p>
-                {/* <p>Description: </p> */}
-                <p>status: {props.checkout.checkedOut ? 'checked out' : 'returned'}</p>
-                <p>Checkout Date: {checkoutDate}</p>
-                <p>Due Date: {dueDate}</p>
-                <button
-                    type="button"
-                    className="card--button"
-                    // disabled={!props.item.available}
-                    onClick={() => props.checkin(checkin, availableItem)}>
+                <div className="checkout--card">
+                    <h2 className="item--name">{props.checkout.item.name}</h2>
+                    <p>Owner: {owner.username} in {owner.city}, {owner.region} </p>
+                    <p>Checkout Date: {checkoutDate}</p>
+                    <p>Due Date: {dueDate}</p>
+                    <p className="item--status">{props.checkout.checkedOut ? 'Checked Out' : 'Returned'}</p>
+                    <button
+                        type="button"
+                        className="card--button"
+                        onClick={() => props.checkin(checkin, availableItem)}>
                         Return
-                </button>
-
-
-            </div>
-            :
-            <div className="checkout--card--unapproved">
-            <h2 className="item--name">{props.checkout.item.name}</h2>
-            {/* <p>By: {props.checkout.item.author}</p> */}
-            <p>Owner: {owner.username} in {owner.city}, {owner.region} </p>
-            {/* <p>Description: </p> */}
-            <h2>Status: {props.checkout.declined ? 'DECLINED' : 'Awaiting Owner Approval'}</h2>
-            <p>Checkout Date: Awaiting Approval</p>
-            <p>Due Date: Awaiting Approval</p>
-            <button
-                disabled
-                type="button"
-                className="card--button"
-                // disabled={!props.item.available}
-                onClick={() => props.checkin(checkin, availableItem)}>
-                    Return
-            </button>
-            { props.checkout.declined ?
-            <button
-               
-                type="button"
-                className="card--button"
-                // disabled={!props.item.available}
-                onClick={() => props.hideCheckout(hidden)}
-                >
-                    Hide
-            </button>
-            :
-            <button
-               
-                type="button"
-                className="card--button"
-                // disabled={!props.item.available}
-                onClick={() => props.deleteCheckout(props.checkout.id, availableItem)}
-                >
-                    Cancel Request
-            </button>
-            }
-            </div>
+                    </button>
+                </div>
+                :
+                <div className="checkout--card--unapproved">
+                    <h2 className="item--name">{props.checkout.item.name}</h2>
+                    <p>Owner: {owner.username} in {owner.city}, {owner.region} </p>
+                    <p className="item--status">{props.checkout.declined ? 'DECLINED' : 'Awaiting Owner Approval'}</p>
+                    <button
+                        disabled
+                        type="button"
+                        className="card--button"
+                        onClick={() => props.checkin(checkin, availableItem)}>
+                        Return
+                    </button>
+                    {props.checkout.declined ?
+                        <button
+                            type="button"
+                            className="card--button"
+                            onClick={() => props.hideCheckout(hidden)}>
+                            Hide
+                        </button>
+                        :
+                        <button
+                            type="button"
+                            className="card--button"
+                            onClick={() => props.deleteCheckout(props.checkout.id, availableItem)}>
+                            Cancel Request
+                        </button>
+                    }
+                </div>
             }
 
         </div>
