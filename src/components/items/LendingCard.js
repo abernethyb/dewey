@@ -45,6 +45,7 @@ const LendingCard = (props) => {
         checkinDate: "",
         checkedOut: true,
         declined: false,
+        hidden: props.checkout.hidden,
         id: props.checkout.id
 
 
@@ -58,6 +59,7 @@ const LendingCard = (props) => {
         checkinDate: "",
         checkedOut: false,
         declined: true,
+        hidden: props.checkout.hidden,
         id: props.checkout.id
 
 

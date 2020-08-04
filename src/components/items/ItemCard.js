@@ -34,7 +34,8 @@ const ItemCard = (props) => {
         dueDate: "",
         checkinDate: "",
         checkedOut: false,
-        declined: false
+        declined: false,
+        hidden: false
 
 
     };

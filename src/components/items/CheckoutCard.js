@@ -26,7 +26,7 @@ const CheckoutCard = (props) => {
     //console.log(milDate)
     let secDate = Math.round(milDate / 1000)
     // console.log(secDate)
-
+//"hidden": false,
     const checkin = {
         userId: props.checkout.userId,
         itemId: props.checkout.itemId,
@@ -35,6 +35,7 @@ const CheckoutCard = (props) => {
         checkinDate: secDate,
         checkedOut: false,
         declined: props.checkout.declined,
+        hidden: props.checkout.hidden,
         id: props.checkout.id
 
 
@@ -110,7 +111,7 @@ const CheckoutCard = (props) => {
                 type="button"
                 className="card--button"
                 // disabled={!props.item.available}
-                // onClick={() => props.checkin(checkin, availableItem)}
+                onClick={() => props.deleteCheckout(props.checkout.id)}
                 >
                     Cancel Request
             </button>
