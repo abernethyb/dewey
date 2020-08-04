@@ -96,9 +96,6 @@ const ItemCard = (props) => {
                     <h3>{props.item.category.name}</h3>
                     <p>{description}</p>
                     <h3>{unavailableStatus}</h3>
-                        {/* <h3 className="unavailable--display">{!props.item.checkouts.checkedOut ? `UNAVAILABLE` : `Awaiting Owner Approval`}</h3> */}
-
-                    <p>Due on: {humanDueDate}</p>
                     <p>Owned by {props.item.user.username} in  {props.item.user.city}, {props.item.user.region}</p>
                     <button
                         type="button"
