@@ -13,6 +13,13 @@ const PersonalItemCard = (props) => {
     const humanDueDate = `${dDate.getMonth() + 1}/${dDate.getDate()}/${dDate.getFullYear()}`
 
 
+    let unavailableStatus = ""
+    props.item.checkouts.map(checkout => {
+        checkout.checkedOut ? unavailableStatus = `Unavailable. Due On ${humanDueDate}` : unavailableStatus = "Awaiting Owner Approval" 
+    })
+
+
+
 
     let description = null
     switch (props.item.categoryId) {
@@ -38,7 +45,7 @@ const PersonalItemCard = (props) => {
                 <h2 className="item--name">{props.item.name}</h2>
                 <h3>{props.item.category.name}</h3>
                 <p>{description}</p>
-                <h3>{props.item.available ? 'Available' : 'Unavailable'}</h3>
+                <p className="item--status">{props.item.available ? 'Available' : 'Unavailable'}</p>
                 <button type="button"
                     onClick={() => props.history.push(`/PersonalLibrary/${props.item.id}/edit`)}>
                     Edit
@@ -56,8 +63,7 @@ const PersonalItemCard = (props) => {
             <h2 className="item--name">{props.item.name}</h2>
             <h3>{props.item.category.name}</h3>
             <p>{description}</p>
-            <h3 className="unavailable--display">{props.item.available ? 'Available' : 'UNAVAILABLE'}</h3>
-            <p>Due on: {humanDueDate}</p>
+            <p className="item--status">{unavailableStatus}</p>
             <button type="button"
                 disabled
                 onClick={() => props.history.push(`/PersonalLibrary/${props.item.id}/edit`)}>
