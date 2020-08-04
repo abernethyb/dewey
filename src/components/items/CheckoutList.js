@@ -53,12 +53,13 @@ const CheckoutList = (props) => {
 
 // && checkout.checkedOut &&
 // && checkout.checkinDate &&
+// && !checkout.hidden
   
     return (
         <>
             <div className="item--list">
             <h1 className="library--title">Items You're Currently Borrowing</h1>
-                {checkouts.map(checkout => checkout.userId === parseInt(sessionStorage.getItem("credentials")) && checkout.checkinDate === "" && <CheckoutCard key={checkout.id} checkout={checkout} checkin={checkin} deleteCheckout={deleteCheckout} hideCheckout={hideCheckout} {...props} />)}
+                {checkouts.map(checkout => checkout.userId === parseInt(sessionStorage.getItem("credentials")) && checkout.checkinDate === "" && !checkout.hidden && <CheckoutCard key={checkout.id} checkout={checkout} checkin={checkin} deleteCheckout={deleteCheckout} hideCheckout={hideCheckout} {...props} />)}
             </div>
         </>
     );
