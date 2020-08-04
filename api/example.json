@@ -74,7 +74,7 @@
       "userId": 4,
       "name": "Critique of Practical Reason",
       "author": "Immanuel Kant",
-      "available": false,
+      "available": true,
       "serial": "",
       "isbn": "9780521654081",
       "makeOrPublisher": "Cambridge University Press",
@@ -88,7 +88,7 @@
       "userId": 4,
       "name": "Critique of Judgement",
       "author": "Immanuel Kant",
-      "available": true,
+      "available": false,
       "serial": "",
       "isbn": "0199552460",
       "makeOrPublisher": "Oxford University Press",
@@ -97,6 +97,34 @@
       "otherInfo": "",
       "categoryId": 2,
       "id": 4
+    },
+    {
+      "userId": 4,
+      "name": "Phenomenology of Spirit",
+      "author": "Hegel",
+      "available": false,
+      "serial": "",
+      "isbn": "",
+      "makeOrPublisher": "",
+      "model": "",
+      "year": "",
+      "otherInfo": "",
+      "categoryId": 2,
+      "id": 5
+    },
+    {
+      "userId": 5,
+      "name": "Skill Saw",
+      "author": "",
+      "available": true,
+      "serial": "1234567899999",
+      "isbn": "",
+      "makeOrPublisher": "craftsman",
+      "model": "",
+      "year": 2005,
+      "otherInfo": "",
+      "categoryId": 3,
+      "id": 6
     }
   ],
   "categories": [
@@ -117,20 +145,46 @@
     {
       "userId": 5,
       "itemId": 4,
-      "checkoutDate": 1592179200,
-      "dueDate": 1594929662,
-      "checkinDate": 1596472846,
-      "checkedOut": false,
+      "checkoutDate": 1596486559,
+      "dueDate": 1598905759,
+      "checkinDate": "",
+      "checkedOut": true,
+      "declined": false,
+      "hidden": false,
       "id": 1
     },
     {
-      "userId": 2,
+      "userId": 1,
       "itemId": 3,
-      "checkoutDate": 1596472798,
-      "dueDate": 1598891998,
+      "checkoutDate": "",
+      "dueDate": "",
       "checkinDate": "",
-      "checkedOut": true,
+      "checkedOut": false,
+      "declined": true,
+      "hidden": true,
       "id": 2
+    },
+    {
+      "userId": 1,
+      "itemId": 5,
+      "checkoutDate": "",
+      "dueDate": "",
+      "checkinDate": "",
+      "checkedOut": false,
+      "declined": false,
+      "hidden": false,
+      "id": 3
+    },
+    {
+      "userId": 4,
+      "itemId": 1,
+      "checkoutDate": 1596557943,
+      "dueDate": 1598977143,
+      "checkinDate": 1596557968,
+      "checkedOut": false,
+      "declined": false,
+      "hidden": false,
+      "id": 4
     }
   ]
 }
