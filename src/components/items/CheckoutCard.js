@@ -94,6 +94,17 @@ const CheckoutCard = (props) => {
                 onClick={() => props.checkin(checkin, availableItem)}>
                     Return
             </button>
+            { props.checkout.declined ?
+            <button
+               
+                type="button"
+                className="card--button"
+                // disabled={!props.item.available}
+                // onClick={() => props.checkin(checkin, availableItem)}
+                >
+                    Hide
+            </button>
+            :
             <button
                
                 type="button"
@@ -103,6 +114,7 @@ const CheckoutCard = (props) => {
                 >
                     Cancel Request
             </button>
+            }
             </div>
             }
 
