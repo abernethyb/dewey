@@ -126,7 +126,7 @@ const CheckoutCard = (props) => {
                 type="button"
                 className="card--button"
                 // disabled={!props.item.available}
-                onClick={() => props.deleteCheckout(props.checkout.id)}
+                onClick={() => props.deleteCheckout(props.checkout.id, availableItem)}
                 >
                     Cancel Request
             </button>
