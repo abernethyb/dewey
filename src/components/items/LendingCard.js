@@ -7,16 +7,6 @@ import "./Item.css"
 const LendingCard = (props) => {
 
 
-    // let dateDue = null
-    // props.item.checkouts.map(checkout => {
-    //     checkout.checkedOut ? dateDue = checkout.dueDate : (console.log("no"))
-    // })
-    // const dDatedue = new Date(dateDue * 1000)
-    // const humanDueDate = `${dDatedue.getMonth() + 1}/${dDatedue.getDate()}/${dDatedue.getFullYear()}`
-
-    //console.log("checkouts", props.item.checkouts)
-
-
     let milDate = Date.now()
     //console.log(milDate)
     let secDate = Math.round(milDate / 1000)
@@ -31,11 +21,6 @@ const LendingCard = (props) => {
     const dDate = new Date(props.checkout.dueDate * 1000)
     // console.log(`${dDate.getMonth() + 1}/${dDate.getDate()}/${dDate.getFullYear()}`)
     const dueDate = `${dDate.getMonth() + 1}/${dDate.getDate()}/${dDate.getFullYear()}`
-
-    // let milDate = Date.now()
-    // //console.log(milDate)
-    // let secDate = Math.round(milDate / 1000)
-    // // console.log(secDate)
 
     const approve = {
         userId: props.checkout.userId,
@@ -103,24 +88,21 @@ const LendingCard = (props) => {
             {props.checkout.checkedOut ? 
             <div className="lending--card">
                 <h2 className="item--name">{props.checkout.item.name}</h2>
-                {/* <p>By: {props.checkout.item.author}</p> */}
                 <p>Borrower: {props.checkout.user.username} in {props.checkout.user.city}, {props.checkout.user.region} </p>
                 <p>{description}</p>
-                <p>status: {props.checkout.checkedOut ? 'checked out' : 'returned'}</p>
                 <p>Checkout Date: {checkoutDate}</p>
                 <p>Due Date: {dueDate}</p>
+                <p className="item--status">{props.checkout.checkedOut ? 'Checked Out' : 'Returned'}</p>
             </div>
             :
             <div className="request--card">
                 <h2 className="item--name">{props.checkout.item.name}</h2>
-                {/* <p>By: {props.checkout.item.author}</p> */}
                 <p>Borrower: {props.checkout.user.username} in {props.checkout.user.city}, {props.checkout.user.region} </p>
                 <p>{description}</p>
-                <p>status: {props.checkout.checkedOut ? 'checked out' : 'Awaiting Your Approval'}</p>
+                <p className="item--status">{props.checkout.checkedOut ? 'Checked Out' : 'Awaiting Your Approval'}</p>
                 <button
                     type="button"
                     className="card--button"
-                    // disabled={!props.item.available}
                     onClick={() => props.approveCheckout(approve)}
                     >
                     Approve
@@ -128,7 +110,6 @@ const LendingCard = (props) => {
                 <button
                     type="button"
                     className="card--button"
-                    // disabled={!props.item.available}
                     onClick={() => props.declineCheckout(decline, availableItem)}
                     >
                     Decline
