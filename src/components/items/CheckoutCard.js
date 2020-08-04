@@ -62,7 +62,7 @@ const CheckoutCard = (props) => {
         itemId: props.checkout.itemId,
         checkoutDate: props.checkout.checkoutDate,
         dueDate: props.checkout.dueDate,
-        checkinDate: secDate,
+        checkinDate: props.checkout.checkinDate,
         checkedOut: props.checkout.checkedOut,
         declined: props.checkout.declined,
         hidden: true,
