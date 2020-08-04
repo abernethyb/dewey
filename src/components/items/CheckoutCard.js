@@ -26,7 +26,7 @@ const CheckoutCard = (props) => {
     //console.log(milDate)
     let secDate = Math.round(milDate / 1000)
     // console.log(secDate)
-
+//"hidden": false,
     const checkin = {
         userId: props.checkout.userId,
         itemId: props.checkout.itemId,
@@ -35,6 +35,7 @@ const CheckoutCard = (props) => {
         checkinDate: secDate,
         checkedOut: false,
         declined: props.checkout.declined,
+        hidden: props.checkout.hidden,
         id: props.checkout.id
 
 
@@ -54,6 +55,21 @@ const CheckoutCard = (props) => {
         categoryId: props.checkout.item.categoryId,
         id: props.checkout.item.id
     }
+
+
+    const hidden = {
+        userId: props.checkout.userId,
+        itemId: props.checkout.itemId,
+        checkoutDate: props.checkout.checkoutDate,
+        dueDate: props.checkout.dueDate,
+        checkinDate: props.checkout.checkinDate,
+        checkedOut: props.checkout.checkedOut,
+        declined: props.checkout.declined,
+        hidden: true,
+        id: props.checkout.id
+
+
+    };
 
     return (
 
@@ -94,15 +110,27 @@ const CheckoutCard = (props) => {
                 onClick={() => props.checkin(checkin, availableItem)}>
                     Return
             </button>
+            { props.checkout.declined ?
             <button
                
                 type="button"
                 className="card--button"
                 // disabled={!props.item.available}
-                // onClick={() => props.checkin(checkin, availableItem)}
+                onClick={() => props.hideCheckout(hidden)}
+                >
+                    Hide
+            </button>
+            :
+            <button
+               
+                type="button"
+                className="card--button"
+                // disabled={!props.item.available}
+                onClick={() => props.deleteCheckout(props.checkout.id, availableItem)}
                 >
                     Cancel Request
             </button>
+            }
             </div>
             }
 

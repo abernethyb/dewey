@@ -21,13 +21,13 @@ const LendingList = (props) => {
 
     const approveCheckout = (checkout) => {
         ApiManager.editObject("checkouts", checkout).then( () => {
-                props.history.push("./")
+            getItems(); 
             })
     }
     const declineCheckout = (decline, available) => {
         ApiManager.editObject("checkouts", decline).then( () => {
             ApiManager.editObject("items", available).then( () => {
-                props.history.push("./")
+                getItems(); 
             })
             
         }

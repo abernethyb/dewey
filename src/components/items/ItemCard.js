@@ -12,6 +12,11 @@ const ItemCard = (props) => {
     const dDate = new Date(dateDue * 1000)
     const humanDueDate = `${dDate.getMonth() + 1}/${dDate.getDate()}/${dDate.getFullYear()}`
 
+    let unavailableStatus = ""
+    props.item.checkouts.map(checkout => {
+        checkout.checkedOut ? unavailableStatus = `Unavailable, due on ${humanDueDate}` : unavailableStatus = "Awaiting owner approval" 
+    })
+
     //console.log("checkouts", props.item.checkouts)
 
 
@@ -29,7 +34,8 @@ const ItemCard = (props) => {
         dueDate: "",
         checkinDate: "",
         checkedOut: false,
-        declined : false
+        declined: false,
+        hidden: false
 
 
     };
@@ -69,38 +75,38 @@ const ItemCard = (props) => {
 
         <div className="card">
             {props.item.available ?
-            <div className="item--card">
-                <h2 className="item--name">{props.item.name}</h2>
-                <h3>{props.item.category.name}</h3>
-                <p>{description}</p>
-                <p>{props.item.available ? `available` : `unavailable. Due on: ${humanDueDate}`}</p>
-                <p>Owned by {props.item.user.username} in  {props.item.user.city}, {props.item.user.region}</p>
-                <button
-                    type="button"
-                    className="card--button"
-                    disabled={!props.item.available}
-                    onClick={() => props.postCheckout(checkout, unavailableItem)}>
-                    Request Checkout
-                </button>
+                <div className="item--card">
+                    <h2 className="item--name">{props.item.name}</h2>
+                    <h3>{props.item.category.name}</h3>
+                    <p>{description}</p>
+                    <p>{props.item.available ? `available` : `unavailable. Due on: ${humanDueDate}`}</p>
+                    <p>Owned by {props.item.user.username} in  {props.item.user.city}, {props.item.user.region}</p>
+                    <button
+                        type="button"
+                        className="card--button"
+                        disabled={!props.item.available}
+                        onClick={() => props.postCheckout(checkout, unavailableItem)}>
+                        Request Checkout
+                    </button>
 
-            </div>
-            :
-            <div className="item--card--unavailable">
-                <h2 className="item--name">{props.item.name}</h2>
-                <h3>{props.item.category.name}</h3>
-                <p>{description}</p>
-                <h3 className="unavailable--display">{props.item.available ? `Available` : `UNAVAILABLE`}</h3>
-                <p>Due on: {humanDueDate}</p>
-                <p>Owned by {props.item.user.username} in  {props.item.user.city}, {props.item.user.region}</p>
-                <button
-                    type="button"
-                    className="card--button"
-                    disabled={!props.item.available}
-                    onClick={() => props.postCheckout(checkout, unavailableItem)}>
-                    Request Checkout
-                </button>
+                </div>
+                :
+                <div className="item--card--unavailable">
+                    {console.log("checked out?", props.item.checkouts.checkedOut)}
+                    <h2 className="item--name">{props.item.name}</h2>
+                    <h3>{props.item.category.name}</h3>
+                    <p>{description}</p>
+                    <h3>{unavailableStatus}</h3>
+                    <p>Owned by {props.item.user.username} in  {props.item.user.city}, {props.item.user.region}</p>
+                    <button
+                        type="button"
+                        className="card--button"
+                        disabled={!props.item.available}
+                        onClick={() => props.postCheckout(checkout, unavailableItem)}>
+                        Request Checkout
+                        </button>
 
-            </div>
+                </div>
 
             }
         </div>
