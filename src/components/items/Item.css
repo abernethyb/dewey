@@ -179,3 +179,9 @@
 .new--item fieldset {
     border: none;
 }
+
+.item--status {
+  /* text-decoration: underline; */
+  font-weight: bold;
+  font-size: larger;
+}
