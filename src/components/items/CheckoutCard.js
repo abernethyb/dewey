@@ -56,6 +56,21 @@ const CheckoutCard = (props) => {
         id: props.checkout.item.id
     }
 
+
+    const hidden = {
+        userId: props.checkout.userId,
+        itemId: props.checkout.itemId,
+        checkoutDate: props.checkout.checkoutDate,
+        dueDate: props.checkout.dueDate,
+        checkinDate: secDate,
+        checkedOut: props.checkout.checkedOut,
+        declined: props.checkout.declined,
+        hidden: true,
+        id: props.checkout.id
+
+
+    };
+
     return (
 
         <div className="card">
@@ -101,7 +116,7 @@ const CheckoutCard = (props) => {
                 type="button"
                 className="card--button"
                 // disabled={!props.item.available}
-                // onClick={() => props.checkin(checkin, availableItem)}
+                onClick={() => props.hideCheckout(hidden)}
                 >
                     Hide
             </button>
