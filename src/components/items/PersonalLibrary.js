@@ -59,7 +59,25 @@ const PersonalLibrary = (props) => {
     return (
         <>
             <div className="item--list">
-            <h1 className="library--title">Your Library</h1>
+                <div className="library--top">
+                    <h1>Your Library</h1>
+                    <div className="search">
+                        <input type="text" placeholder="Search by Item Name" onChange={event => setSearch(event.target.value)}></input>
+                        <select
+                            className="form-control"
+                            id="categoryId"
+                            onChange={event => setSearch(event.target.value)}
+                        >
+                            <option value="" hidden defaultValue >Category</option>
+                            {categories.map(category =>
+                                <option key={category.id} value={category.id}>
+                                    {category.name}
+                                </option>
+                            )}
+                        </select>
+                        {console.log("filtered", filteredItems)}
+                    </div>
+                </div>
                 <div className="new--item">
                     {/* <button type="button"
                         className="section--button"
@@ -69,7 +87,7 @@ const PersonalLibrary = (props) => {
                     <NewItem getItems={getItems} {...props} />
                 </div>
 
-                {items.map(item => <PersonalItemCard key={item.id} item={item} deleteItem={deleteItem} {...props} />)}
+                {filteredItems.map(item => <PersonalItemCard key={item.id} item={item} deleteItem={deleteItem} {...props} />)}
             </div>
         </>
     );
