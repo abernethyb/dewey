@@ -10,6 +10,7 @@ import "./Library.css"
 const PublicLibrary = (props) => {
     const [items, setItems] = useState([]);
     const [search, setSearch] = useState("")
+    const [searchByUser, setSearchByUser] = useState("")
     const [filteredItems, setFilteredItems] = useState([])
     const [categories, setCategories] = useState([]);
 
@@ -33,6 +34,7 @@ const PublicLibrary = (props) => {
         }
         )
     }
+    //  || item.user.username.toLowerCase().includes(byUserSearch.toLowerCase())
     useEffect(() => {
         setFilteredItems(
             items.filter(item => {
@@ -41,7 +43,15 @@ const PublicLibrary = (props) => {
         )
     }, [search, items])
 
+    useEffect(() => {
+        setFilteredItems(
+            items.filter(item => {
+                return item.user.username.toLowerCase().includes(searchByUser.toLowerCase())
+            })
+        )
+    }, [searchByUser, items])
 
+// byUserSearch,
 
     useEffect(() => {
 
@@ -73,6 +83,7 @@ const PublicLibrary = (props) => {
                                 </option>
                             )}
                         </select>
+                        <input type="text" placeholder="Search by Item Owner" onChange={event => setSearchByUser(event.target.value)}></input>
                         {console.log("filtered", filteredItems)}
                     </div>
                 </div>
