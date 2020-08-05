@@ -33,7 +33,6 @@
 
 .search input, select {
     margin: 0rem 0.5rem;
-    /* display: inline-block; */
     border: 1px solid #ccc;
     border-radius: 4px;
 }

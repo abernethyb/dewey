@@ -9,6 +9,9 @@ import NewItem from "./newItem";
 
 const PersonalLibrary = (props) => {
     const [items, setItems] = useState([]);
+    const [search, setSearch] = useState("")
+    const [filteredItems, setFilteredItems] = useState([])
+    const [categories, setCategories] = useState([]);
 
     const getItems = () => {
         return ApiManager.getEmbededTwiceExpandedByUserId("items", parseInt(sessionStorage.getItem("credentials")), "checkouts", "user", "category").then(itemsFromAPI => {
@@ -24,6 +27,33 @@ const PersonalLibrary = (props) => {
     useEffect(() => {
         getItems();
     }, [props.hasUser]);
+
+
+
+    useEffect(() => {
+        setFilteredItems(
+            items.filter(item => {
+                return item.name.toLowerCase().includes(search.toLowerCase()) || item.categoryId === parseInt(search)
+            })
+        )
+    }, [search, items])
+
+
+    useEffect(() => {
+
+        ApiManager.getAll("categories",).then(response => {
+            setCategories(response);
+
+        })
+
+
+    }, []);
+
+
+
+
+
+
 
 
     return (
