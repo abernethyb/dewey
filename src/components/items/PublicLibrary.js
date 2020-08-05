@@ -55,7 +55,7 @@ const PublicLibrary = (props) => {
     useEffect(() => {
         setFilteredItems(
             items.filter(item => {
-                return item.user.city.toLowerCase().includes(searchByLocation.toLowerCase())
+                return item.user.city.toLowerCase().includes(searchByLocation.toLowerCase()) || item.user.region.toLowerCase().includes(searchByLocation.toLowerCase())
             })
         )
     }, [searchByLocation, items])
@@ -91,7 +91,7 @@ const PublicLibrary = (props) => {
                                 </option>
                             )}
                         </select>
-                        <input type="text" placeholder="Search by City" onChange={event => setSearchByLocation(event.target.value)}></input>
+                        <input type="text" placeholder="Search by City or Region" onChange={event => setSearchByLocation(event.target.value)}></input>
                         <input type="text" placeholder="Search by Item Owner" onChange={event => setSearchByUser(event.target.value)}></input>
                         {console.log("filtered", filteredItems)}
                     </div>
