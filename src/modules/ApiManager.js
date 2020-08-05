@@ -1,5 +1,7 @@
 const remoteURL = "http://localhost:5002"
 
+//json-server -p 5002 -w example.json
+
 export default {
     getSingleEmbedded(table, id, embed) {
         return fetch(`${remoteURL}/${table}/${id}?_embed=${embed}`)
