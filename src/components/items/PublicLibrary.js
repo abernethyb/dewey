@@ -34,7 +34,7 @@ const PublicLibrary = (props) => {
         }
         )
     }
-    //  || item.user.username.toLowerCase().includes(byUserSearch.toLowerCase())
+
     useEffect(() => {
         setFilteredItems(
             items.filter(item => {
@@ -51,7 +51,6 @@ const PublicLibrary = (props) => {
         )
     }, [searchByUser, items])
 
-// byUserSearch,
 
     useEffect(() => {
 
@@ -67,7 +66,7 @@ const PublicLibrary = (props) => {
     return (
         <>
             <div className="item--list">
-                <div className="library--title">
+                <div className="library--top">
                     <h1>Public Library</h1>
                     <div className="search">
                         <input type="text" placeholder="Search by Item Name" onChange={event => setSearch(event.target.value)}></input>

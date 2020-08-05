@@ -20,10 +20,24 @@
     width: 100%;
     justify-content: space-around;
 }
+.library--top {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+}
 
 .search {
     margin: 2rem;
+    
 }
+
+.search input, select {
+    margin: 0rem 0.5rem;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+
 
 
 
