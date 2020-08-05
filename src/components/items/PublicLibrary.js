@@ -11,6 +11,7 @@ const PublicLibrary = (props) => {
     const [items, setItems] = useState([]);
     const [search, setSearch] = useState("")
     const [searchByUser, setSearchByUser] = useState("")
+    const [searchByLocation, setSearchByLocation] = useState("")
     const [filteredItems, setFilteredItems] = useState([])
     const [categories, setCategories] = useState([]);
 
@@ -50,6 +51,14 @@ const PublicLibrary = (props) => {
             })
         )
     }, [searchByUser, items])
+    
+    useEffect(() => {
+        setFilteredItems(
+            items.filter(item => {
+                return item.user.city.toLowerCase().includes(searchByLocation.toLowerCase())
+            })
+        )
+    }, [searchByLocation, items])
 
 
     useEffect(() => {
@@ -82,6 +91,7 @@ const PublicLibrary = (props) => {
                                 </option>
                             )}
                         </select>
+                        <input type="text" placeholder="Search by City" onChange={event => setSearchByLocation(event.target.value)}></input>
                         <input type="text" placeholder="Search by Item Owner" onChange={event => setSearchByUser(event.target.value)}></input>
                         {console.log("filtered", filteredItems)}
                     </div>
