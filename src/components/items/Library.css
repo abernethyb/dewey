@@ -14,11 +14,19 @@
     border-radius: 0.4rem;
 }
 
+
 .library--title {
     display: flex;
     width: 100%;
     justify-content: space-around;
 }
+
+.search {
+    margin: 2rem;
+}
+
+
+
 
 
 
