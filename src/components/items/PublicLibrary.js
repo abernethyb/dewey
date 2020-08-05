@@ -36,7 +36,7 @@ const PublicLibrary = (props) => {
     useEffect(() => {
         setFilteredItems(
             items.filter(item => {
-                return item.name.toLowerCase().includes(search.toLowerCase()) || item.categoryId == search
+                return item.name.toLowerCase().includes(search.toLowerCase()) || item.categoryId === parseInt(search)
             })
         )
     }, [search, items])
@@ -47,7 +47,7 @@ const PublicLibrary = (props) => {
 
         ApiManager.getAll("categories",).then(response => {
             setCategories(response);
-           
+
         })
 
 
