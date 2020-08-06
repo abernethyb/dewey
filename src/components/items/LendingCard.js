@@ -6,6 +6,10 @@ import "./Item.css"
 
 const LendingCard = (props) => {
 
+    const messages = props.checkout.messages.map(message => {
+        return message.content
+    })
+
 
     let milDate = Date.now()
     //console.log(milDate)
@@ -114,7 +118,7 @@ const LendingCard = (props) => {
                     >
                     Decline
                 </button>
-                
+                <div>{messages}</div>
             </div>
             }
         </div>

@@ -1,0 +1,319 @@
+{
+  "users": [
+    {
+      "username": "Bob",
+      "email": "bob@email.com",
+      "password": "password",
+      "city": "Bucksnort",
+      "region": "Tennessee",
+      "id": 1
+    },
+    {
+      "username": "Jane",
+      "email": "jane@email.com",
+      "password": "$uper$3cr#tPassword",
+      "city": "Nashville",
+      "region": "Tennessee",
+      "id": 2
+    },
+    {
+      "username": "Grace",
+      "email": "Grace@email.com",
+      "password": "password",
+      "city": "Hopkinsville",
+      "region": "Kentucky",
+      "id": 3
+    },
+    {
+      "username": "Brendan",
+      "email": "brendan@email.com",
+      "password": "password",
+      "city": "Hopkinsville",
+      "region": "Kentucky",
+      "id": 4
+    },
+    {
+      "username": "Nate",
+      "email": "nate@email.com",
+      "password": "password",
+      "city": "Nashville",
+      "region": "Tennessee",
+      "id": 5
+    }
+  ],
+  "items": [
+    {
+      "userId": 1,
+      "name": "Goundwork for the Metaphysics of Morals",
+      "author": "Immanuel Kant",
+      "available": true,
+      "serial": "",
+      "isbn": "",
+      "makeOrPublisher": "Oxford University Press",
+      "model": "",
+      "year": 2009,
+      "otherInfo": "",
+      "categoryId": 2,
+      "id": 1
+    },
+    {
+      "userId": 4,
+      "name": "Critique of Pure reason",
+      "author": "Immanuel Kant",
+      "available": false,
+      "serial": "",
+      "isbn": "9780521657297",
+      "makeOrPublisher": "Cambridge University Press",
+      "model": "",
+      "year": 2009,
+      "otherInfo": "",
+      "categoryId": 2,
+      "id": 2
+    },
+    {
+      "userId": 4,
+      "name": "Critique of Practical Reason",
+      "author": "Immanuel Kant",
+      "available": false,
+      "serial": "",
+      "isbn": "9780521654081",
+      "makeOrPublisher": "Cambridge University Press",
+      "model": "",
+      "year": 1999,
+      "otherInfo": "edited",
+      "categoryId": 2,
+      "id": 3
+    },
+    {
+      "userId": 4,
+      "name": "Critique of Judgement",
+      "author": "Immanuel Kant",
+      "available": false,
+      "serial": "",
+      "isbn": "0199552460",
+      "makeOrPublisher": "Oxford University Press",
+      "model": "",
+      "year": 2009,
+      "otherInfo": "",
+      "categoryId": 2,
+      "id": 4
+    },
+    {
+      "userId": 4,
+      "name": "Phenomenology of Spirit",
+      "author": "Hegel",
+      "available": false,
+      "serial": "",
+      "isbn": "",
+      "makeOrPublisher": "",
+      "model": "",
+      "year": "",
+      "otherInfo": "",
+      "categoryId": 2,
+      "id": 5
+    },
+    {
+      "userId": 5,
+      "name": "Skill Saw",
+      "author": "",
+      "available": true,
+      "serial": "1234567899999",
+      "isbn": "",
+      "makeOrPublisher": "craftsman",
+      "model": "",
+      "year": 2005,
+      "otherInfo": "",
+      "categoryId": 3,
+      "id": 6
+    },
+    {
+      "userId": 1,
+      "name": "Weed eater",
+      "author": "",
+      "available": false,
+      "serial": "1234567899999",
+      "isbn": "",
+      "makeOrPublisher": "stihl",
+      "model": "",
+      "year": 2010,
+      "otherInfo": "",
+      "categoryId": 3,
+      "id": 7
+    },
+    {
+      "userId": 3,
+      "name": "practice chanter",
+      "author": "",
+      "available": false,
+      "serial": "",
+      "isbn": "",
+      "makeOrPublisher": "R.G Hardie",
+      "model": "",
+      "year": 2005,
+      "otherInfo": "old practice chanter",
+      "categoryId": 4,
+      "id": 8
+    }
+  ],
+  "categories": [
+    {
+      "name": "Other",
+      "id": 1
+    },
+    {
+      "name": "Book",
+      "id": 2
+    },
+    {
+      "name": "Tool",
+      "id": 3
+    },
+    {
+      "name": "Musical Instrument",
+      "id": 4
+    },
+    {
+      "name": "Electronics",
+      "id": 5
+    }
+  ],
+  "checkouts": [
+    {
+      "userId": 5,
+      "itemId": 4,
+      "checkoutDate": 1596486559,
+      "dueDate": 1598905759,
+      "checkinDate": "",
+      "checkedOut": true,
+      "declined": false,
+      "hidden": false,
+      "id": 1
+    },
+    {
+      "userId": 1,
+      "itemId": 3,
+      "checkoutDate": "",
+      "dueDate": "",
+      "checkinDate": "",
+      "checkedOut": false,
+      "declined": true,
+      "hidden": true,
+      "id": 2
+    },
+    {
+      "userId": 1,
+      "itemId": 5,
+      "checkoutDate": "",
+      "dueDate": "",
+      "checkinDate": "",
+      "checkedOut": false,
+      "declined": true,
+      "hidden": true,
+      "id": 3
+    },
+    {
+      "userId": 4,
+      "itemId": 1,
+      "checkoutDate": "",
+      "dueDate": "",
+      "checkinDate": "",
+      "checkedOut": false,
+      "declined": true,
+      "hidden": true,
+      "id": 4
+    },
+    {
+      "userId": 3,
+      "itemId": 7,
+      "checkoutDate": 1596565605,
+      "dueDate": 1598984805,
+      "checkinDate": "",
+      "checkedOut": true,
+      "declined": false,
+      "hidden": false,
+      "id": 5
+    },
+    {
+      "userId": 4,
+      "itemId": 8,
+      "checkoutDate": 1596565863,
+      "dueDate": 1598985063,
+      "checkinDate": "",
+      "checkedOut": true,
+      "declined": false,
+      "hidden": false,
+      "id": 6
+    },
+    {
+      "userId": 5,
+      "itemId": 5,
+      "checkoutDate": "",
+      "dueDate": "",
+      "checkinDate": "",
+      "checkedOut": false,
+      "declined": true,
+      "hidden": false,
+      "id": 7
+    },
+    {
+      "userId": 5,
+      "itemId": 3,
+      "checkoutDate": "",
+      "dueDate": "",
+      "checkinDate": "",
+      "checkedOut": false,
+      "declined": false,
+      "hidden": false,
+      "id": 8
+    },
+    {
+      "userId": 3,
+      "itemId": 2,
+      "checkoutDate": "",
+      "dueDate": "",
+      "checkinDate": "",
+      "checkedOut": false,
+      "declined": true,
+      "hidden": false,
+      "id": 9
+    },
+    {
+      "userId": 3,
+      "itemId": 5,
+      "checkoutDate": 1596652563,
+      "dueDate": 1599071763,
+      "checkinDate": "",
+      "checkedOut": true,
+      "declined": false,
+      "hidden": false,
+      "id": 10
+    },
+    {
+      "userId": 3,
+      "itemId": 2,
+      "checkoutDate": "",
+      "dueDate": "",
+      "checkinDate": "",
+      "checkedOut": false,
+      "declined": false,
+      "hidden": false,
+      "id": 11
+    }
+  ],
+  "messages": [
+    {
+      "userId": 3,
+      "checkoutId": 11,
+      "date": 1599071763,
+      "content": "Hi, I'd like to check this item out.",
+      "id": 1
+    },
+    {
+      "userId": 4,
+      "checkoutId": 11,
+      "date": 1599071800,
+      "content": "Cool, I'll leave it on the front porch, my address is: 123 Main st.",
+      "id": 2
+    }
+  ]
+}

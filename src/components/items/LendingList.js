@@ -9,7 +9,7 @@ const LendingList = (props) => {
     const [checkouts, setCheckouts] = useState([]);
 
     const getItems = () => {
-        return ApiManager.getTwoExpanded("checkouts", "item", "user").then(itemsFromAPI => {
+        return ApiManager.getEmbeddedWithTwoExpand("checkouts", "messages", "item", "user").then(itemsFromAPI => {
             setCheckouts(itemsFromAPI)
 
         });
