@@ -9,7 +9,7 @@ const LendingList = (props) => {
     const [checkouts, setCheckouts] = useState([]);
 
     const getItems = () => {
-        return ApiManager.getTwoExpanded("checkouts", "item", "user").then(itemsFromAPI => {
+        return ApiManager.getEmbeddedWithTwoExpand("checkouts", "messages", "item", "user").then(itemsFromAPI => {
             setCheckouts(itemsFromAPI)
 
         });
@@ -39,11 +39,11 @@ const LendingList = (props) => {
         <>
             <div className="item--list">
             <h1 className="library--title">Requests</h1>
-                {checkouts.map(checkout => checkout.item.userId === parseInt(sessionStorage.getItem("credentials")) && !checkout.checkedOut && !checkout.declined && <LendingCard key={checkout.id} checkout={checkout} approveCheckout={approveCheckout} declineCheckout={declineCheckout} {...props} />)}
+                {checkouts.map(checkout => checkout.item.userId === parseInt(sessionStorage.getItem("credentials")) && !checkout.checkedOut && !checkout.declined && <LendingCard key={checkout.id} checkout={checkout} approveCheckout={approveCheckout} declineCheckout={declineCheckout} getItems={getItems} {...props} />)}
             </div>
             <div className="item--list">
             <h1 className="library--title">Items You're Currently Lending</h1>
-                {checkouts.map(checkout => checkout.item.userId === parseInt(sessionStorage.getItem("credentials")) && checkout.checkedOut && <LendingCard key={checkout.id} checkout={checkout} {...props} />)}
+                {checkouts.map(checkout => checkout.item.userId === parseInt(sessionStorage.getItem("credentials")) && checkout.checkedOut && <LendingCard key={checkout.id} checkout={checkout} getItems={getItems} {...props} />)}
             </div>
         </>
     );

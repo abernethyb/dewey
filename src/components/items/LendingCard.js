@@ -1,10 +1,12 @@
 
-import React from 'react';
+import React, { useState, useEffect } from "react"
 import "./Item.css"
+import MessageCard from "./Messages"
 
 
 
 const LendingCard = (props) => {
+    const [display, setDisplay] = useState("show--details");
 
 
     let milDate = Date.now()
@@ -85,38 +87,63 @@ const LendingCard = (props) => {
     return (
 
         <div className="card">
-            {props.checkout.checkedOut ? 
-            <div className="lending--card">
-                <h2 className="item--name">{props.checkout.item.name}</h2>
-                <p>Borrower: {props.checkout.user.username} in {props.checkout.user.city}, {props.checkout.user.region} </p>
-                <p>{description}</p>
-                <p>Checkout Date: {checkoutDate}</p>
-                <p>Due Date: {dueDate}</p>
-                <p className="item--status">{props.checkout.checkedOut ? 'Checked Out' : 'Returned'}</p>
-            </div>
-            :
-            <div className="request--card">
-                <h2 className="item--name">{props.checkout.item.name}</h2>
-                <p>Borrower: {props.checkout.user.username} in {props.checkout.user.city}, {props.checkout.user.region} </p>
-                <p>{description}</p>
-                <p className="item--status">{props.checkout.checkedOut ? 'Checked Out' : 'Awaiting Your Approval'}</p>
-                <button
-                    type="button"
-                    className="card--button"
-                    onClick={() => props.approveCheckout(approve)}
+            <div className={display}>
+            {props.checkout.checkedOut ?
+                <div className="lending--card">
+                    <div className="card--details">
+                    <h2 className="item--name">{props.checkout.item.name}</h2>
+                    <p>Borrower: {props.checkout.user.username} in {props.checkout.user.city}, {props.checkout.user.region} </p>
+                    <p>{description}</p>
+                    <p>Checkout Date: {checkoutDate}</p>
+                    <p>Due Date: {dueDate}</p>
+                    <p className="item--status">{props.checkout.checkedOut ? 'Checked Out' : 'Returned'}</p>
+                    <button
+                        type="button"
+                        className="card--button"
+                        onClick={() => setDisplay("show--messages")}
                     >
-                    Approve
-                </button>
-                <button
-                    type="button"
-                    className="card--button"
-                    onClick={() => props.declineCheckout(decline, availableItem)}
+                        Show Messages
+                    </button>
+                    </div>
+                    <div className="messages--import">
+                        <MessageCard key={props.checkout.id} checkout={props.checkout} getItems={props.getItems} setDisplay={setDisplay} {...props}/>
+                    </div>
+                </div>
+                :
+                <div className="request--card">
+                    <div className="card--details">
+                    <h2 className="item--name">{props.checkout.item.name}</h2>
+                    <p>Borrower: {props.checkout.user.username} in {props.checkout.user.city}, {props.checkout.user.region} </p>
+                    <p>{description}</p>
+                    <p className="item--status">{props.checkout.checkedOut ? 'Checked Out' : 'Awaiting Your Approval'}</p>
+                    <button
+                        type="button"
+                        className="card--button"
+                        onClick={() => props.approveCheckout(approve)}
                     >
-                    Decline
+                        Approve
                 </button>
-                
-            </div>
+                    <button
+                        type="button"
+                        className="card--button"
+                        onClick={() => props.declineCheckout(decline, availableItem)}
+                    >
+                        Decline
+                </button>
+                    <button
+                        type="button"
+                        className="card--button"
+                        onClick={() => setDisplay("show--messages")}
+                    >
+                        Show Messages
+                    </button>
+                    </div>
+                    <div className="messages--import">
+                        <MessageCard key={props.checkout.id} checkout={props.checkout} getItems={props.getItems} setDisplay={setDisplay} {...props}/>
+                    </div>
+                </div>
             }
+            </div>
         </div>
     );
 };
