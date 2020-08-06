@@ -90,14 +90,23 @@ const LendingCard = (props) => {
             <div className={display}>
             {props.checkout.checkedOut ?
                 <div className="lending--card">
+                    <div className="card--details">
                     <h2 className="item--name">{props.checkout.item.name}</h2>
                     <p>Borrower: {props.checkout.user.username} in {props.checkout.user.city}, {props.checkout.user.region} </p>
                     <p>{description}</p>
                     <p>Checkout Date: {checkoutDate}</p>
                     <p>Due Date: {dueDate}</p>
                     <p className="item--status">{props.checkout.checkedOut ? 'Checked Out' : 'Returned'}</p>
+                    <button
+                        type="button"
+                        className="card--button"
+                        onClick={() => setDisplay("show--messages")}
+                    >
+                        Show Messages
+                    </button>
+                    </div>
                     <div className="messages--import">
-                        <MessageCard key={props.checkout.id} checkout={props.checkout} {...props}/>
+                        <MessageCard key={props.checkout.id} checkout={props.checkout} getItems={props.getItems} setDisplay={setDisplay} {...props}/>
                     </div>
                 </div>
                 :
