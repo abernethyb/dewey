@@ -7,7 +7,7 @@ import "./Item.css"
 const LendingCard = (props) => {
 
     const messages = props.checkout.messages.map(message => {
-        return message.content
+        return message.userId === props.checkout.userId ? <p>{props.checkout.user.username}: {message.content}</p> : <p>You: {message.content}</p>
     })
 
 
