@@ -118,7 +118,7 @@ const LendingCard = (props) => {
                         Decline
                 </button>
                     <div className="messages--import">
-                        <MessageCard key={props.checkout.id} checkout={props.checkout} {...props}/>
+                        <MessageCard key={props.checkout.id} checkout={props.checkout} getItems={props.getItems} {...props}/>
                     </div>
                 </div>
             }
