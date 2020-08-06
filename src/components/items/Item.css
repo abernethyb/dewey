@@ -185,3 +185,10 @@
   font-weight: bold;
   font-size: larger;
 }
+
+.show--messages .card--details {
+  display: none;
+}
+.show--details .messages--import {
+  display: none;
+}

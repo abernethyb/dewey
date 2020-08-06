@@ -68,6 +68,13 @@ const MessageCard = (props) => {
                     >Send Message</button>
                     </div>
                 </fieldset>
+                <button
+                        type="button"
+                        className="card--button"
+                        onClick={() => props.setDisplay("show--details")}
+                    >
+                        Show Details
+                    </button>
             </div>
 
 

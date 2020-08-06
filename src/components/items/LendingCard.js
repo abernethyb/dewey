@@ -1,11 +1,13 @@
 
-import React from 'react';
+import React, { useState, useEffect } from "react"
 import "./Item.css"
 import MessageCard from "./Messages"
 
 
 
 const LendingCard = (props) => {
+    const [display, setDisplay] = useState("show--details");
+
 
     let milDate = Date.now()
     //console.log(milDate)
@@ -85,6 +87,7 @@ const LendingCard = (props) => {
     return (
 
         <div className="card">
+            <div className={display}>
             {props.checkout.checkedOut ?
                 <div className="lending--card">
                     <h2 className="item--name">{props.checkout.item.name}</h2>
@@ -99,6 +102,7 @@ const LendingCard = (props) => {
                 </div>
                 :
                 <div className="request--card">
+                    <div className="card--details">
                     <h2 className="item--name">{props.checkout.item.name}</h2>
                     <p>Borrower: {props.checkout.user.username} in {props.checkout.user.city}, {props.checkout.user.region} </p>
                     <p>{description}</p>
@@ -117,11 +121,20 @@ const LendingCard = (props) => {
                     >
                         Decline
                 </button>
+                    <button
+                        type="button"
+                        className="card--button"
+                        onClick={() => setDisplay("show--messages")}
+                    >
+                        Show Messages
+                    </button>
+                    </div>
                     <div className="messages--import">
-                        <MessageCard key={props.checkout.id} checkout={props.checkout} getItems={props.getItems} {...props}/>
+                        <MessageCard key={props.checkout.id} checkout={props.checkout} getItems={props.getItems} setDisplay={setDisplay} {...props}/>
                     </div>
                 </div>
             }
+            </div>
         </div>
     );
 };
