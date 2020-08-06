@@ -7,16 +7,6 @@ import MessageCard from "./Messages"
 
 const LendingCard = (props) => {
 
-    // const messages = props.checkout.messages.map(message => {
-    //     return message.userId === props.checkout.userId ? <p>{props.checkout.user.username}: {message.content}</p> : <p>You: {message.content}</p>
-    // })
-
-    // const handleFieldChange = event => {
-    //     const stateToChange = { ...item };
-    //     stateToChange[event.target.id] = event.target.value;
-    //     setItem(stateToChange);
-    // };
-
     let milDate = Date.now()
     //console.log(milDate)
     let secDate = Math.round(milDate / 1000)
@@ -103,6 +93,9 @@ const LendingCard = (props) => {
                     <p>Checkout Date: {checkoutDate}</p>
                     <p>Due Date: {dueDate}</p>
                     <p className="item--status">{props.checkout.checkedOut ? 'Checked Out' : 'Returned'}</p>
+                    <div className="messages--import">
+                        <MessageCard key={props.checkout.id} checkout={props.checkout} {...props}/>
+                    </div>
                 </div>
                 :
                 <div className="request--card">
