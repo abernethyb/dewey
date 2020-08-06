@@ -190,14 +190,14 @@
   "messages": [
     {
       "userId": 4,
-      "checkoutId": 11,
+      "checkoutId": 4,
       "date": 1599071763,
       "content": "Hi, I'd like to check this item out.",
       "id": 1
     },
     {
       "userId": 1,
-      "checkoutId": 11,
+      "checkoutId": 4,
       "date": 1599071800,
       "content": "Cool, I'll leave it on the front porch, my address is: 123 Main st.",
       "id": 2
