@@ -1,15 +1,21 @@
 
 import React from 'react';
 import "./Item.css"
+import MessageCard from "./Messages"
 
 
 
 const LendingCard = (props) => {
 
-    const messages = props.checkout.messages.map(message => {
-        return message.userId === props.checkout.userId ? <p>{props.checkout.user.username}: {message.content}</p> : <p>You: {message.content}</p>
-    })
+    // const messages = props.checkout.messages.map(message => {
+    //     return message.userId === props.checkout.userId ? <p>{props.checkout.user.username}: {message.content}</p> : <p>You: {message.content}</p>
+    // })
 
+    // const handleFieldChange = event => {
+    //     const stateToChange = { ...item };
+    //     stateToChange[event.target.id] = event.target.value;
+    //     setItem(stateToChange);
+    // };
 
     let milDate = Date.now()
     //console.log(milDate)
@@ -89,37 +95,39 @@ const LendingCard = (props) => {
     return (
 
         <div className="card">
-            {props.checkout.checkedOut ? 
-            <div className="lending--card">
-                <h2 className="item--name">{props.checkout.item.name}</h2>
-                <p>Borrower: {props.checkout.user.username} in {props.checkout.user.city}, {props.checkout.user.region} </p>
-                <p>{description}</p>
-                <p>Checkout Date: {checkoutDate}</p>
-                <p>Due Date: {dueDate}</p>
-                <p className="item--status">{props.checkout.checkedOut ? 'Checked Out' : 'Returned'}</p>
-            </div>
-            :
-            <div className="request--card">
-                <h2 className="item--name">{props.checkout.item.name}</h2>
-                <p>Borrower: {props.checkout.user.username} in {props.checkout.user.city}, {props.checkout.user.region} </p>
-                <p>{description}</p>
-                <p className="item--status">{props.checkout.checkedOut ? 'Checked Out' : 'Awaiting Your Approval'}</p>
-                <button
-                    type="button"
-                    className="card--button"
-                    onClick={() => props.approveCheckout(approve)}
+            {props.checkout.checkedOut ?
+                <div className="lending--card">
+                    <h2 className="item--name">{props.checkout.item.name}</h2>
+                    <p>Borrower: {props.checkout.user.username} in {props.checkout.user.city}, {props.checkout.user.region} </p>
+                    <p>{description}</p>
+                    <p>Checkout Date: {checkoutDate}</p>
+                    <p>Due Date: {dueDate}</p>
+                    <p className="item--status">{props.checkout.checkedOut ? 'Checked Out' : 'Returned'}</p>
+                </div>
+                :
+                <div className="request--card">
+                    <h2 className="item--name">{props.checkout.item.name}</h2>
+                    <p>Borrower: {props.checkout.user.username} in {props.checkout.user.city}, {props.checkout.user.region} </p>
+                    <p>{description}</p>
+                    <p className="item--status">{props.checkout.checkedOut ? 'Checked Out' : 'Awaiting Your Approval'}</p>
+                    <button
+                        type="button"
+                        className="card--button"
+                        onClick={() => props.approveCheckout(approve)}
                     >
-                    Approve
+                        Approve
                 </button>
-                <button
-                    type="button"
-                    className="card--button"
-                    onClick={() => props.declineCheckout(decline, availableItem)}
+                    <button
+                        type="button"
+                        className="card--button"
+                        onClick={() => props.declineCheckout(decline, availableItem)}
                     >
-                    Decline
+                        Decline
                 </button>
-                <div>{messages}</div>
-            </div>
+                    <div className="messages--import">
+                        <MessageCard key={props.checkout.id} checkout={props.checkout} {...props}/>
+                    </div>
+                </div>
             }
         </div>
     );
