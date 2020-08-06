@@ -1,5 +1,6 @@
 import ApiManager from '../../modules/ApiManager';
 import React, { useState, useEffect } from 'react';
+import MessageCard from "./Messages"
 import "./Item.css"
 
 
@@ -115,6 +116,9 @@ const CheckoutCard = (props) => {
                             Cancel Request
                         </button>
                     }
+                    <div className="messages--import">
+                        <MessageCard key={props.checkout.id} checkout={props.checkout} getItems={props.getItems} owner={owner} {...props} />
+                    </div>
                 </div>
             }
 
