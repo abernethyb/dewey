@@ -68,6 +68,7 @@ const MessageCard = (props) => {
                     >Send Message</button>
                     </div>
                 </fieldset>
+                <hr/>
                 <button
                         type="button"
                         className="card--button"

@@ -21,7 +21,7 @@
     font-size: 16px;
     margin: 1rem;
 }
-  
+
   .item--card button:hover {
     color: brown;
     background-color: rgba(31, 149, 234, 1);
@@ -104,7 +104,7 @@
     width: 15rem;
     height: 25rem;
     text-align: center;
-    
+
 }
 .edit--form:hover {
     box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.4);
@@ -138,7 +138,7 @@
 }
 
 
-  
+
 .lending--card {
     background-color: rgba(46, 196, 182, 1);
     box-shadow: 0 4px 8px 0 rgba(0,0,0, 0.4);
@@ -191,4 +191,29 @@
 }
 .show--details .messages--import {
   display: none;
+}
+
+.messages input {
+  width: 100%;
+  padding: 6px 10px;
+  margin: 0.4rem 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+.messages fieldset {
+  border: none;
+}
+
+.request--card .messages {
+  background-color: rgba(255, 255, 255, 0.267);
+  /* box-shadow: 0 4px 8px 0 rgba(0,0,0, 0.4); */
+  border-radius: 0.4rem;
+  margin: 0rem;
+  /* padding: 0rem 1 0rem 0.5rem; */
+  width: 15rem;
+  height: 25rem;
+  overflow: auto;
 }
