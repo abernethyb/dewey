@@ -1,13 +1,8 @@
 
-import React, { useState, useEffect } from "react"
+import React, { useState } from "react"
 import ApiManager from '../../modules/ApiManager';
 import "./Item.css"
 
-// "userId": 3,
-// "checkoutId": 11,
-// "date": 1599071763,
-// "content": "Hi, I'd like to check this item out.",
-// "id": 1
 
 const MessageCard = (props) => {
     let milDate = Date.now()
