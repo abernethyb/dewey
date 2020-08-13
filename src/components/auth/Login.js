@@ -28,12 +28,13 @@ const Login = props => {
 
 
         ApiManager.getAll("users").then((users) => {
-            let badLogin
+            let badLogin = null
+            let i = 1
             users.map((user) => {
                 if (badLogin === false) {
                     return console.log("Login Sucessfull")
                 } else {
-                    console.log("Invalid Login, please try again")
+                    console.log("Invalid Login, please try again", i)
                 }
                 badLogin ? console.log("badlogin is", badLogin) : console.log("badlogin is", badLogin)
                 if (user.username === credentials.username && user.password === credentials.password) {
@@ -43,7 +44,13 @@ const Login = props => {
                     console.log("userId", user.id)
                 } else {
                     badLogin = true
+                    i++
                     sessionStorage.clear()
+                }
+                if (badLogin === true && i-1 === users.length) {
+                    console.log("testing", i)
+                    console.log("users.length", users.length)
+                    window.alert("Login unsucessful; please try again or register a new accound if you're a new user")
                 }
 
 
