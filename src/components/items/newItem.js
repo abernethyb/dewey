@@ -26,7 +26,9 @@ const NewItem = props => {
         } else {
             setIsLoading(true);
             item.categoryId = parseInt(item.categoryId)
-            item.year != "" ? item.year = parseInt(item.year) : item.year = item.year
+            if (item.year !== "") {
+                item.year = parseInt(item.year)
+            }
             ApiManager.addObject("items", item)
                 .then(() => props.getItems().then(() => {
                     setIsLoading(false)
