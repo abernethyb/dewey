@@ -18,7 +18,7 @@ const MessageCard = (props) => {
 
 
     const messages = props.checkout.messages.map(message => {
-        return message.userId === props.checkout.userId ? (props.owner ? <p>You: {message.content}</p> : <p>{props.checkout.user.username}: {message.content}</p>) : (props.owner ? <p> {props.owner.username}: {message.content}</p> : <p>You: {message.content}</p>)
+        return message.userId === props.checkout.userId ? (props.owner ? <p key={message.id}>You: {message.content}</p> : <p key={message.id}>{props.checkout.user.username}: {message.content}</p>) : (props.owner ? <p key={message.id}> {props.owner.username}: {message.content}</p> : <p key={message.id}>You: {message.content}</p>)
     })
 
     const handleFieldChange = event => {
