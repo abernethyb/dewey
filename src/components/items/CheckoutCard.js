@@ -14,7 +14,7 @@ const CheckoutCard = (props) => {
     }
     useEffect(() => {
         getOwner();
-    }, []);
+    });
 
     const coutDate = new Date(props.checkout.checkoutDate * 1000)
     //console.log(`${coutDate.getMonth() + 1}/${coutDate.getDate()}/${coutDate.getFullYear()}`)
@@ -37,7 +37,7 @@ const CheckoutCard = (props) => {
         checkinDate: secDate,
         checkedOut: false,
         declined: props.checkout.declined,
-        hidden: props.checkout.hidden,
+        hidden: true,
         id: props.checkout.id
 
 

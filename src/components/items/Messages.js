@@ -1,13 +1,8 @@
 
-import React, { useState, useEffect } from "react"
+import React, { useState } from "react"
 import ApiManager from '../../modules/ApiManager';
 import "./Item.css"
 
-// "userId": 3,
-// "checkoutId": 11,
-// "date": 1599071763,
-// "content": "Hi, I'd like to check this item out.",
-// "id": 1
 
 const MessageCard = (props) => {
     let milDate = Date.now()
@@ -18,7 +13,7 @@ const MessageCard = (props) => {
 
 
     const messages = props.checkout.messages.map(message => {
-        return message.userId === props.checkout.userId ? (props.owner ? <p>You: {message.content}</p> : <p>{props.checkout.user.username}: {message.content}</p>) : (props.owner ? <p> {props.owner.username}: {message.content}</p> : <p>You: {message.content}</p>)
+        return message.userId === props.checkout.userId ? (props.owner ? <p key={message.id}>You: {message.content}</p> : <p key={message.id}>{props.checkout.user.username}: {message.content}</p>) : (props.owner ? <p key={message.id}> {props.owner.username}: {message.content}</p> : <p key={message.id}>You: {message.content}</p>)
     })
 
     const handleFieldChange = event => {
@@ -68,6 +63,7 @@ const MessageCard = (props) => {
                     >Send Message</button>
                     </div>
                 </fieldset>
+                <hr/>
                 <button
                         type="button"
                         className="card--button"
