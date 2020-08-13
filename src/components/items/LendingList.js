@@ -39,7 +39,7 @@ const LendingList = (props) => {
         <>
             <div className="item--list">
             <h1 className="library--title">Requests</h1>
-                {checkouts.map(checkout => checkout.item.userId === parseInt(sessionStorage.getItem("credentials")) && !checkout.checkedOut && !checkout.declined && <LendingCard key={checkout.id} checkout={checkout} approveCheckout={approveCheckout} declineCheckout={declineCheckout} getItems={getItems} {...props} />)}
+                {checkouts.map(checkout => checkout.item.userId === parseInt(sessionStorage.getItem("credentials")) && !checkout.checkedOut && !checkout.declined && !checkout.hidden && <LendingCard key={checkout.id} checkout={checkout} approveCheckout={approveCheckout} declineCheckout={declineCheckout} getItems={getItems} {...props} />)}
             </div>
             <div className="item--list">
             <h1 className="library--title">Items You're Currently Lending</h1>
