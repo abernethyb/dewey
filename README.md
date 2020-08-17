@@ -37,6 +37,8 @@ Dewey is an application that allows a user to run their own personal library and
 
 ##### Public Library:
 
+<!-- need to add screneshots -->
+
 The "Public Library" view contains a list of items that are available for checkout.  In this section, users will only be able to see items that do not belong to them.  Users can search for items by category, geographic location, owner, or item name.  Items can have three different statuses.
 
   - Available items:
@@ -70,12 +72,21 @@ The "Your Library" view contains a list of items that only the owner user can se
   - This is a sub-section of "Items you're currently lending".  These item cards contain buttons for the owner to either approve or decline a request to borrow the item.  If the owner clicks approve, a checkout and due date will be generated and the item will be marked as "checked-out" in the public library.  If the user clicks the declind button, the borrower will be notified and the item will be made available again in the public library.
 
 - Items you're currently borrowing:
-Once the user clicks the "request checkout" button on an item in the public library, they will be navigated to this view.  These items are essentially the inverse of "Items you're currently lending".  There are two types of items here and an affordance to message the owner.
+  - Once the user clicks the "request checkout" button on an item in the public library, they will be navigated to this view.  These items are essentially the inverse of "Items you're currently lending".  There are two types of items here and an affordance to message the owner.
   - If an item is awaiting approval, it will be marked as such.  There is a button to cancel the request.  If the owner has declined the request, the item will be marked as Declined here and the user can hide the item from view.
   - If the checkout has been approved by the owner, then the item will contain a due date and a "return" button.  Once the borrower clicks the return button, the item will be marked as available in the "public library" view.
 
 
-#### Checking an item out
+<!-- #### Checking an item out -->
+
+<!-- ## Data Flow
+
+## ERD -->
+
+
+## Author
+
+- Brendan Abernethy
 
 
 <!-- ## Checkout flow:
