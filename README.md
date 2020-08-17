@@ -1,8 +1,8 @@
 # Dewey
 
-Dewey will be an application that allows users to set up their own personal library.  The application will allow users to list any kind of item in their library (not just books) and keep track of it when another user checks the item out.
+Dewey is an application that allows a user to run their own personal library and interact with other users' libraries.  Users can compile a collection of items which they would like to make available for other users to borrow and can checkout items from other users' libraries.  Dewey allows the user to keep track of items they are lending as well as items they are borrowing; it sets a due date for borrowed items, records who is borrowing the item, and allows messaging between borrowers and owners.
 
-## Checkout flow:
+<!-- ## Checkout flow:
 
 A user clicks checkout affordance on item. 
 
@@ -44,4 +44,4 @@ the item will no longer be displayed in the owning user’s main view under “i
 
 ## Wireframe - Main view:
 
-![image](https://user-images.githubusercontent.com/61983527/88423773-f154e680-cdb1-11ea-89df-2a83aa0390f2.png)
+![image](https://user-images.githubusercontent.com/61983527/88423773-f154e680-cdb1-11ea-89df-2a83aa0390f2.png) -->
