@@ -11,8 +11,8 @@ header {
     flex-direction: row;
     flex-wrap: nowrap; */
     margin: 4rem 1rem;
-    color: rgba(72, 70, 69);
-    font-family: 'Courier New', Courier, monospace
+    color: rgba(72, 70, 69, 1);
+    font-family: 'Courier New', Courier, monospace;
 }
 
 .nav--container {
@@ -47,6 +47,7 @@ nav .nav--container li {
         /* color: rgb(72 70 69); */
         color: rgba(227, 98, 114, 1);
         text-decoration: none;
+        font-weight: bold;
 
     }
   
