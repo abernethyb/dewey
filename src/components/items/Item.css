@@ -34,6 +34,8 @@
 
 
 
+
+
 .item--card {
     background-color: rgba(46, 196, 182, 1);
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.4);
@@ -42,6 +44,7 @@
     padding: 1rem;
     width: 15rem;
     height: 25rem;
+    font-family: monospace;
 }
 .item--card:hover {
     box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.4);
@@ -55,6 +58,7 @@
     padding: 1rem;
     width: 15rem;
     height: 25rem;
+    font-family: monospace;
 }
 
 
@@ -66,6 +70,7 @@
     padding: 1rem;
     width: 15rem;
     height: 25rem;
+    font-family: monospace;
 }
 .personal--card:hover {
     box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.4);
@@ -79,6 +84,7 @@
     padding: 1rem;
     width: 15rem;
     height: 25rem;
+    font-family: monospace;
 }
 .new--item {
     background-color: rgba(114, 168, 185, 1);
@@ -89,6 +95,7 @@
     width: 15rem;
     height: 25rem;
     text-align: center;
+    font-family: monospace;
 }
 
 .new--item:hover {
@@ -104,6 +111,7 @@
     width: 15rem;
     height: 25rem;
     text-align: center;
+    font-family: monospace;
 
 }
 .edit--form:hover {
@@ -122,6 +130,7 @@
     padding: 1rem;
     width: 15rem;
     height: 25rem;
+    font-family: monospace;
 }
 .checkout--card:hover {
     box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.4);
@@ -135,6 +144,7 @@
     padding: 1rem;
     width: 15rem;
     height: 25rem;
+    font-family: monospace;
 }
 
 
@@ -147,6 +157,7 @@
     padding: 1rem;
     width: 15rem;
     height: 25rem;
+    font-family: monospace;
 }
 
 .lending--card:hover {
@@ -160,6 +171,7 @@
     padding: 1rem;
     width: 15rem;
     height: 25rem;
+    font-family: monospace;
 }
 
 .request--card:hover {
@@ -174,6 +186,7 @@
     border: 1px solid #ccc;
     border-radius: 4px;
     /* box-sizing: border-box; */
+    font-family: 'Courier New', Courier, monospace;
 }
 
 .new--item fieldset {
