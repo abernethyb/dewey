@@ -2,6 +2,19 @@
 
 Dewey is an application that allows a user to run their own personal library and interact with other users' libraries.  Users can compile a collection of items which they would like to make available for other users to borrow and can checkout items from other users' libraries.  Dewey allows the user to keep track of items they are lending as well as items they are borrowing; it sets a due date for borrowed items, records who is borrowing the item, and allows messaging between borrowers and owners.
 
+## Getting Started
+
+Clone this repository.
+
+From the application's main directory, run ```npm install`` to install react.
+
+#### JSON setup
+
+Included in this repository is a file named "example.JSON"; copy the contents of this file.  From the API directory, create a new JSON file (i.e. ```database.json```) and paste the contents of the example JSON file.
+
+From the API directory, run the following command: ```json-server -p 5002 -w database.json```
+(Note: the application is currently set to run from port 5002; however, if the port is changed, change the ```remoteURL``` variable in ```ApiManager.js``` file in the "modules" directory to match the desired value) 
+
 <!-- ## Checkout flow:
 
 A user clicks checkout affordance on item. 
