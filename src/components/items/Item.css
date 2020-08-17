@@ -38,6 +38,7 @@
   color: rgba(72, 70, 69, 1);
 } */
 
+
 .item--card {
     background-color: rgba(46, 196, 182, 1);
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.4);
@@ -223,6 +224,26 @@
 }
 
 .request--card .messages {
+  background-color: rgba(255, 255, 255, 0.267);
+  /* box-shadow: 0 4px 8px 0 rgba(0,0,0, 0.4); */
+  border-radius: 0.4rem;
+  margin: 0rem;
+  /* padding: 0rem 1 0rem 0.5rem; */
+  width: 15rem;
+  height: 25rem;
+  overflow: auto;
+}
+.checkout--card .messages {
+  background-color: rgba(255, 255, 255, 0.267);
+  /* box-shadow: 0 4px 8px 0 rgba(0,0,0, 0.4); */
+  border-radius: 0.4rem;
+  margin: 0rem;
+  /* padding: 0rem 1 0rem 0.5rem; */
+  width: 15rem;
+  height: 25rem;
+  overflow: auto;
+}
+.lending--card .messages {
   background-color: rgba(255, 255, 255, 0.267);
   /* box-shadow: 0 4px 8px 0 rgba(0,0,0, 0.4); */
   border-radius: 0.4rem;
