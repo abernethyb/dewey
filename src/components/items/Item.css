@@ -33,6 +33,11 @@
 } */
 
 
+/* 
+.card {
+  color: rgba(72, 70, 69, 1);
+} */
+
 
 .item--card {
     background-color: rgba(46, 196, 182, 1);
@@ -42,6 +47,7 @@
     padding: 1rem;
     width: 15rem;
     height: 25rem;
+    font-family: 'Courier New', Courier, monospace;
 }
 .item--card:hover {
     box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.4);
@@ -55,6 +61,7 @@
     padding: 1rem;
     width: 15rem;
     height: 25rem;
+    font-family: 'Courier New', Courier, monospace;
 }
 
 
@@ -66,6 +73,7 @@
     padding: 1rem;
     width: 15rem;
     height: 25rem;
+    font-family: 'Courier New', Courier, monospace;
 }
 .personal--card:hover {
     box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.4);
@@ -79,6 +87,7 @@
     padding: 1rem;
     width: 15rem;
     height: 25rem;
+    font-family: 'Courier New', Courier, monospace;
 }
 .new--item {
     background-color: rgba(114, 168, 185, 1);
@@ -89,6 +98,7 @@
     width: 15rem;
     height: 25rem;
     text-align: center;
+    font-family: 'Courier New', Courier, monospace;
 }
 
 .new--item:hover {
@@ -104,6 +114,7 @@
     width: 15rem;
     height: 25rem;
     text-align: center;
+    font-family: 'Courier New', Courier, monospace;
 
 }
 .edit--form:hover {
@@ -122,6 +133,7 @@
     padding: 1rem;
     width: 15rem;
     height: 25rem;
+    font-family: 'Courier New', Courier, monospace;
 }
 .checkout--card:hover {
     box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.4);
@@ -135,6 +147,7 @@
     padding: 1rem;
     width: 15rem;
     height: 25rem;
+    font-family: 'Courier New', Courier, monospace;
 }
 
 
@@ -147,6 +160,7 @@
     padding: 1rem;
     width: 15rem;
     height: 25rem;
+    font-family: 'Courier New', Courier, monospace;
 }
 
 .lending--card:hover {
@@ -160,6 +174,7 @@
     padding: 1rem;
     width: 15rem;
     height: 25rem;
+    font-family: 'Courier New', Courier, monospace;
 }
 
 .request--card:hover {
@@ -174,6 +189,7 @@
     border: 1px solid #ccc;
     border-radius: 4px;
     /* box-sizing: border-box; */
+    font-family: 'Courier New', Courier, monospace;
 }
 
 .new--item fieldset {
@@ -208,6 +224,26 @@
 }
 
 .request--card .messages {
+  background-color: rgba(255, 255, 255, 0.267);
+  /* box-shadow: 0 4px 8px 0 rgba(0,0,0, 0.4); */
+  border-radius: 0.4rem;
+  margin: 0rem;
+  /* padding: 0rem 1 0rem 0.5rem; */
+  width: 15rem;
+  height: 25rem;
+  overflow: auto;
+}
+.checkout--card .messages {
+  background-color: rgba(255, 255, 255, 0.267);
+  /* box-shadow: 0 4px 8px 0 rgba(0,0,0, 0.4); */
+  border-radius: 0.4rem;
+  margin: 0rem;
+  /* padding: 0rem 1 0rem 0.5rem; */
+  width: 15rem;
+  height: 25rem;
+  overflow: auto;
+}
+.lending--card .messages {
   background-color: rgba(255, 255, 255, 0.267);
   /* box-shadow: 0 4px 8px 0 rgba(0,0,0, 0.4); */
   border-radius: 0.4rem;

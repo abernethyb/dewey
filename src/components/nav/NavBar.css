@@ -1,11 +1,18 @@
+
+/*
+original background color:
+background-color: rgba(203, 243, 240, 1);
+*/
 header {
-    background-color: rgba(203, 243, 240, 1);
+    background-color: rgba(222, 197, 153, 1);
     box-shadow: 0 4px 8px 0 rgba(0,0,0, 0.4);
     border-radius: 0.4rem;
     /* display: flex;
     flex-direction: row;
     flex-wrap: nowrap; */
-    margin: 1rem;
+    margin: 4rem 1rem;
+    color: rgba(72, 70, 69, 1);
+    font-family: 'Courier New', Courier, monospace;
 }
 
 .nav--container {
@@ -20,6 +27,7 @@ nav .nav--container li {
     text-align: center;
     font-size: 1.5em;
     list-style-type: none;
+    border: solid rgba(72, 70, 69, 0.534) 2px;
   }
 
 /* .nav-link {
@@ -34,6 +42,14 @@ nav .nav--container li {
     text-decoration: none;
     font-size: 16px;
 } */
+
+    .nav-link {
+        /* color: rgb(72 70 69); */
+        color: rgba(227, 98, 114, 1);
+        text-decoration: none;
+        font-weight: bold;
+
+    }
   
   .nav-link:hover {
     color: brown;
