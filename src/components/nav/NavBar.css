@@ -4,7 +4,7 @@ original background color:
 background-color: rgba(203, 243, 240, 1);
 */
 header {
-    background-color: rgb(222, 197, 153);
+    background-color: rgba(222, 197, 153, 1);
     box-shadow: 0 4px 8px 0 rgba(0,0,0, 0.4);
     border-radius: 0.4rem;
     /* display: flex;
