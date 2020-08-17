@@ -26,7 +26,7 @@ Dewey is an application that allows a user to run their own personal library and
     - This application is currently only for demonstration and testing purposes and is therefore not secure.  DO NOT enter any sensitive information into the application.
 
 - signing in or registering an account:
-  - If you are not already logged into Dewey, then you should be navigated to a login page.  From there, if you have already registered, enter your credentials and click submit.  If you are a new user, click the "register new user" button and enter the requested information.  Upon clicking sign up (or "sign in" if you've already registered), you will be taken to a home view.
+  - If you are not already logged into Dewey, then you should be navigated to a login page.  From there, if you have already registered, enter your credentials and click submit.  If you are a new user, click the "register new user" button and enter the requested information.  Upon clicking sign up (or "sign in" if you've already registered), you will be taken to a home view.  The home view will contain all other views and a navigation bar to go to individual views.
 
 - Note: 
     - To see the full functionality of the application, it will be necssary to have at least two accounts running.  Open a new window and repeat the sign in or registration process.
@@ -37,17 +37,45 @@ Dewey is an application that allows a user to run their own personal library and
 
 ##### Public Library:
 
-The "Public Library" view contains a list of items that are available for checkout.  In this section, users will only be able to see items that do not belong to them.  Items can have three different statuses.
+The "Public Library" view contains a list of items that are available for checkout.  In this section, users will only be able to see items that do not belong to them.  Users can search for items by category, geographic location, owner, or item name.  Items can have three different statuses.
 
   - Available items:
     - These item cards contain basic information about the item an can be checked out.
 
   - Checked-out items:
-    - these items contain basic infromation about the item as well as a due date for the item.  The appearance will be "faded out" and the items are not able to be checked out.
+    - These items contain basic infromation about the item as well as a due date for the item.  The appearance will be "faded out" and the items are not able to be checked out.
 
   - Items awaiting checkout approval:
+    - These items are essentially the same as Checked-out items, except the due date is replaced with "Awaiting owner approval".
 
-- Checking an item out
+##### Your Library
+
+The "Your Library" view contains a list of items that only the owner user can see.  The item cards are essentially the same as those of the public Library, except they can be edited or deleted.  
+
+- Adding a new item:
+  - This view contains a form to add a new item.
+  - Fill in as much information as possible for the item.
+  - Item Name and category are required.
+  - Click the "submit" button at the bottom of the form.
+
+##### Other Views
+
+- Home:
+  - The home view is a consolidation of all other views.
+
+- Items you're currently Lending:
+  - This is a list of all items that a user is currently lending to other users.  Items in this view contain a due date as well as basic information about the borrower.  Items in this view also contain a message field whereby the owner can contact the borrower.
+
+- Requests:
+  - This is a sub-section of "Items you're currently lending".  These item cards contain buttons for the owner to either approve or decline a request to borrow the item.  If the owner clicks approve, a checkout and due date will be generated and the item will be marked as "checked-out" in the public library.  If the user clicks the declind button, the borrower will be notified and the item will be made available again in the public library.
+
+- Items you're currently borrowing:
+Once the user clicks the "request checkout" button on an item in the public library, they will be navigated to this view.  These items are essentially the inverse of "Items you're currently lending".  There are two types of items here and an affordance to message the owner.
+  - If an item is awaiting approval, it will be marked as such.  There is a button to cancel the request.  If the owner has declined the request, the item will be marked as Declined here and the user can hide the item from view.
+  - If the checkout has been approved by the owner, then the item will contain a due date and a "return" button.  Once the borrower clicks the return button, the item will be marked as available in the "public library" view.
+
+
+#### Checking an item out
 
 
 <!-- ## Checkout flow:
